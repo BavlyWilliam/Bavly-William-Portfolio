@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bavly William | AI implementation and automation</title>
+  <meta name="description" content="Bavly William builds automations that turn messy business input into clean, checked data: Python, APIs, and LLMs used only where rules can't cope. Cairo, open to remote and UAE roles.">
+  <meta name="theme-color" content="#101B35">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bavly William | AI implementation and automation">
+  <meta property="og:description" content="Messy business input in. Clean, checked data out. Projects, code and case studies.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/">
+  <meta property="og:image" content="https://bavlywilliam.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bavly William",
+    "jobTitle": "AI implementation and automation specialist",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+    "url": "https://bavlywilliam.github.io/",
+    "sameAs": [
+      "https://github.com/BavlyWilliam",
+      "https://www.linkedin.com/in/bavly-william-b5a27822a",
+      "https://www.behance.net/bavlywilliam"
+    ]
+  }
+  </script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top" aria-label="Bavly William, back to top">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#videos" data-nav="videos" hidden>Videos</a>
+        <a href="#creative">Creative</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero__copy">
+        <h1 class="hero__title"><span>Messy business input in.</span> <span>Clean, checked data out.</span></h1>
+        <p class="hero__lede">I'm Bavly William, an AI implementation and automation specialist in Cairo. I write plain code for the rules, bring in an LLM only where the rules can't read the input, and run the same checks on whatever it returns.</p>
+        <p class="hero__availability" data-bind="availability">Open to remote AI automation roles, relocation to the UAE or Qatar, and freelance builds for small businesses.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" data-bind-mailto href="mailto:bavlywilliamwork@gmail.com">Email me</a>
+          <a class="button" href="#work">See the work</a>
+          <a class="button" data-bind-cv href="#" hidden>Download CV</a>
+        </div>
+      </div>
+
+      <figure class="stage">
+        <img class="stage__presenter" src="assets/img/avatar-presenting.webp" width="395" height="900" alt="Illustration of Bavly presenting the example">
+        <div class="demo" id="demo">
+          <div class="demo__chat">
+            <p class="demo__group">Business purchases</p>
+            <div class="bubble">
+              <p class="bubble__sender">Mona</p>
+              <p class="bubble__text">Purchase<br>Item: UV unit<br><span class="bubble__typo">Quantaty</span>: 1<br>Amount: 950</p>
+              <p class="bubble__time">2:44 pm</p>
+            </div>
+          </div>
+
+          <ol class="demo__steps" aria-label="What happens to the message">
+            <li class="step step--fail"><strong>Template parser</strong> can't read "Quantaty"</li>
+            <li class="step step--ai"><strong>AI fallback</strong> reads it as Quantity: 1</li>
+            <li class="step step--ok"><strong>Validator</strong> quantity above 0, amount above 0</li>
+          </ol>
+
+          <div class="demo__sheet">
+            <table class="ledger">
+              <caption class="ledger__caption">Google Sheet, new row</caption>
+              <thead>
+                <tr><th scope="col" class="ledger__date">Date</th><th scope="col">Buyer</th><th scope="col">Item</th><th scope="col" class="num">Qty</th><th scope="col" class="num">Amount</th><th scope="col">Source</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="ledger__date">29 Jul</td><td>Mona</td><td>UV unit</td><td class="num">1</td><td class="num">950 EGP</td><td><span class="source-tag">ai</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figcaption class="stage__caption">
+          What my WhatsApp purchase logger does with a typo. Example data.
+          <button class="replay" type="button" hidden>Replay</button>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section__head">
+        <h2 class="section__title" id="work-title">Work</h2>
+        <p class="section__note">Tools I built inside my day job, then independent projects with full case studies.</p>
+      </div>
+      <dl class="legend" aria-label="What each status means">
+        <div><dt><span class="status status--live">Live</span></dt><dd>people use it today</dd></div>
+        <div><dt><span class="status status--working">Working build</span></dt><dd>runs end to end, not in daily use</dd></div>
+        <div><dt><span class="status status--prototype">Prototype</span></dt><dd>proves the idea</dd></div>
+        <div><dt><span class="status status--progress">In progress</span></dt><dd>being built now</dd></div>
+      </dl>
+      <div class="project-groups" data-list="projects"></div>
+    </section>
+
+    <section class="section wrap" id="videos" aria-labelledby="videos-title" hidden>
+      <div class="section__head">
+        <h2 class="section__title" id="videos-title">Videos</h2>
+      </div>
+      <div class="videos" data-list="videos"></div>
+    </section>
+
+    <section class="section wrap" id="creative" aria-labelledby="creative-title">
+      <div class="section__head">
+        <h2 class="section__title" id="creative-title">Creative work</h2>
+        <p class="section__note">Book design, campaign art and ads I made for the businesses above.</p>
+      </div>
+      <div class="creative" data-list="creative"></div>
+      <p class="section__more"><a data-bind-href="behance" href="https://www.behance.net/bavlywilliam">See everything on Behance</a></p>
+    </section>
+
+    <section class="section wrap" id="experience" aria-labelledby="experience-title">
+      <div class="section__head">
+        <h2 class="section__title" id="experience-title">Experience</h2>
+        <p class="section__note">Six years in customer-facing technology roles, automating the work around the job.</p>
+      </div>
+      <ol class="timeline" data-list="experience"></ol>
+      <div class="facts">
+        <div class="facts__col">
+          <h3 class="facts__title">Use at work</h3>
+          <ul data-list="skills-using"></ul>
+        </div>
+        <div class="facts__col">
+          <h3 class="facts__title">Learning now</h3>
+          <ul data-list="skills-learning"></ul>
+        </div>
+        <div class="facts__col">
+          <h3 class="facts__title">Credentials and languages</h3>
+          <ul data-list="credentials"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__inner">
+        <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+        <div class="contact__body">
+          <div class="contact__brand" data-brand hidden></div>
+          <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+          <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+          <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+          <ul class="contact__links" data-list="links"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="wrap noscript">The project list needs JavaScript. Code: <a href="https://github.com/BavlyWilliam">github.com/BavlyWilliam</a>. Contact: <a href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a>.</p>
+  </noscript>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>
