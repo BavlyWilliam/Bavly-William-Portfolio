@@ -4,7 +4,7 @@
 
 **AI implementation and automation. Messy business input in, clean, checked data out.**
 
-[![Live site](https://img.shields.io/badge/Live-bavlywilliam.github.io-7B1E32?style=for-the-badge)](https://bavlywilliam.github.io/)
+[![Live site](https://img.shields.io/badge/Live-Bavly--William--Portfolio-702C42?style=for-the-badge)](https://bavlywilliam.github.io/Bavly-William-Portfolio/)
 ![HTML](https://img.shields.io/badge/HTML-static-14213D?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-no%20framework-14213D?style=for-the-badge&logo=javascript&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-14213D?style=for-the-badge&logo=github)
@@ -153,7 +153,7 @@ Export each piece at about 900px wide as `.webp` into `assets/img/`, then add a 
 ## Preview locally
 
 ```bash
-cd BavlyWilliam.github.io
+cd Bavly-William-Portfolio
 python -m http.server 8000
 ```
 
@@ -161,10 +161,14 @@ Open <http://localhost:8000>. Opening `index.html` by double-clicking also works
 
 ## Deploy
 
-1. Create a public repository named exactly `BavlyWilliam.github.io`.
-2. Push these files to `main`.
+This is a GitHub Pages **project site**, so its address is the account address plus the repository name.
+
+1. Repository: `BavlyWilliam/Bavly-William-Portfolio`, public.
+2. Push to `main`.
 3. Settings, Pages: source "Deploy from a branch", branch `main`, folder `/ (root)`.
-4. The site goes live at <https://bavlywilliam.github.io/> within a few minutes. Existing project sites such as `/Audio-Books-website/` keep working.
+4. The site goes live at <https://bavlywilliam.github.io/Bavly-William-Portfolio/> within a few minutes.
+
+All links inside the site are relative, so it works under any repository name. Only four things contain the full address and must change if the repository is ever renamed: `og:url`, `og:image` and the `url` in the JSON-LD block of `index.html`, `og:image` in `case.html`, and the address printed on `assets/img/og.png`. Renaming also changes the address on both CVs.
 
 ## Brand
 
@@ -199,9 +203,11 @@ Logo files:
 |---|---|
 | `assets/img/bav-automations-logo.svg` | Full logo, transparent background. Works on navy and on cream (it carries its own navy outline) |
 | `assets/img/bav-automations-logo-navy.svg` | Full logo on a navy tile, for places where you can't control the background |
+| `assets/img/bav-automations-logo-cream.svg` | Full logo on a cream tile with rounded corners. Profile pictures, video outros, light documents |
+| `assets/img/bav-automations-logo-cream-2048.png` | The cream tile as a 2048 px PNG, for apps that don't accept SVG (Behance, LinkedIn, video editors) |
 | `assets/img/favicon.svg` | Robot icon, 16 x 16 grid. Browser tab and site header |
 
-Both logos are rebuilt square by square in the brand palette, so they stay sharp at any size and weigh about 11 KB. The `brand` block in `data.js` controls where the logo appears.
+The SVG logos are rebuilt square by square in the brand palette, so they stay sharp at any size and weigh about 11 KB. The `brand` block in `data.js` controls where the logo appears.
 
 The icon (`assets/img/favicon.svg`) is the BAV robot drawn on a 16 x 16 pixel grid, so it stays sharp in a browser tab and at any larger size. The same file is the logo in the site header.
 
