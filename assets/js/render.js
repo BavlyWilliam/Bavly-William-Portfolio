@@ -60,6 +60,12 @@
       node.setAttribute("href", "mailto:" + person.email);
     });
   }
+  // WhatsApp: digits only in data.js (country code, no + or spaces). Empty hides every WhatsApp link.
+  var waNumber = String(person.whatsapp || "").replace(/\D/g, "");
+  document.querySelectorAll("[data-bind-whatsapp]").forEach(function (node) {
+    if (waNumber) node.setAttribute("href", "https://wa.me/" + waNumber);
+    else (node.closest("[data-whatsapp-wrap]") || node).hidden = true;
+  });
   document.querySelectorAll("[data-bind-href]").forEach(function (node) {
     var value = links[node.getAttribute("data-bind-href")];
     if (value) node.setAttribute("href", value);

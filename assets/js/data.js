@@ -33,6 +33,8 @@ window.PORTFOLIO = {
     role: "AI implementation and automation",
     location: "Cairo, Egypt",
     email: "bavlywilliamwork@gmail.com",
+    // WhatsApp number, digits only with the country code (no + or spaces). "" hides the WhatsApp buttons.
+    whatsapp: "201271136118",
     // Put your CV at assets/cv/Bavly-William-CV.pdf, then set this to that path:
     cvPdf: "",
     availability:
@@ -51,7 +53,7 @@ window.PORTFOLIO = {
     linkedin: "https://www.linkedin.com/in/bavly-william-b5a27822a",
     behance: "https://www.behance.net/bavlywilliam",
     // Your YouTube channel. Check the handle matches the one you claimed, then keep it here.
-    youtube: "https://www.youtube.com/@BavlyWilliamAI/shorts",
+    youtube: "https://www.youtube.com/@BavlyWilliamAI",
     // Set this only after the Notion page has no draft notes or private case studies under it:
     notion: ""
   },
@@ -322,11 +324,11 @@ window.PORTFOLIO = {
       group: "independent",
       title: "Parla Italiano marketing, creative and AI sales assistant",
       context: "Live language-course business I co-run. I own everything except the teaching.",
-      status: "progress",
+      status: "live",
       summary:
         "I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.",
       how:
-        "The assistant answers more than 330 tested scenarios without calling a model and passes only what those don't cover to Gemini 3.1. Keeping that AI fallback small was the point: it keeps token use, and cost, down. Approved by Meta; production hosting is in progress, so it doesn't answer customers yet.",
+        "The assistant answers more than 330 tested scenarios without calling a model and passes only what those don't cover to Gemini 3.1. Keeping that AI fallback small was the point: it keeps token use, and cost, down. Every chat now gets an answer in seconds instead of hours, without hiring someone to reply by hand.",
       stack: ["Content strategy", "Meta Ads", "Creative production", "Python", "Gemini API"],
       image: "assets/img/cover-a1.webp",
       imageAlt: "Cover of the Parla Italiano A1 course book",
@@ -375,7 +377,7 @@ window.PORTFOLIO = {
         broke: [
           {
             issue: "Production hosting failed after Meta approved the app.",
-            fix: "Still open. The assistant runs locally until hosting is fixed."
+            fix: "Fixed. The assistant is hosted and answers customers on Messenger."
           }
         ],
         results: [
@@ -383,14 +385,15 @@ window.PORTFOLIO = {
           "Redesigned A1 and A2 books, with a QR-linked audio companion.",
           "More than 100 sales chats audited. In a detailed sample of 31, the median first reply was 2 hours 20 minutes and 15 of 26 ad-driven chats never received a price.",
           "A 25-scenario reply playbook and a lead tracker (New, Qualified, Paid, Lost with reason).",
-          "In the audited ad period, WhatsApp-button ads cost about 2.50 EGP per chat against 9.63 EGP on Messenger."
+          "In the audited ad period, WhatsApp-button ads cost about 2.50 EGP per chat against 9.63 EGP on Messenger.",
+          "The sales assistant now answers every chat immediately: first reply in seconds instead of hours, so leads aren't lost while they wait, and no extra person is hired to answer chats by hand."
         ],
         limits: [
           "Campaign figures describe the audited period. They are diagnostic and claim no sales lift.",
-          "The sales assistant is not answering customers yet."
+          "Questions outside the tested scenarios and the AI fallback's limits still go to a person."
         ],
         next: [
-          "Host the assistant and compare first-reply time and price-sent rate against the audit baseline."
+          "Measure price-sent rate and conversions against the audit baseline."
         ]
       }
     },
