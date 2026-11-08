@@ -51,7 +51,7 @@ window.PORTFOLIO = {
     linkedin: "https://www.linkedin.com/in/bavly-william-b5a27822a",
     behance: "https://www.behance.net/bavlywilliam",
     // Your YouTube channel. Check the handle matches the one you claimed, then keep it here.
-    youtube: "https://www.youtube.com/@BavlyWilliam",
+    youtube: "https://www.youtube.com/@BavlyWilliamAI/shorts",
     // Set this only after the Notion page has no draft notes or private case studies under it:
     notion: ""
   },
@@ -529,14 +529,14 @@ window.PORTFOLIO = {
     {
       id: "parla-case-study",
       title: "Parla Italiano case study: one request, a whole system",
-      youtubeId: "",
+      youtubeId: "yesqCWwKWEQ",
       poster: "assets/img/video-parla-case-study.webp",
       file: ""
     },
     {
       id: "whatsapp-explainer",
       title: "How the WhatsApp purchase logger works, in 49 seconds",
-      youtubeId: "",
+      youtubeId: "1Zm951PmB_0",
       vertical: true,
       poster: "assets/img/video-whatsapp-explainer.webp",
       file: ""
@@ -544,7 +544,7 @@ window.PORTFOLIO = {
     {
       id: "brand-video",
       title: "Who I am and what I fix, in 38 seconds",
-      youtubeId: "",
+      youtubeId: "DMXJ6AwHf7s",
       vertical: true,
       poster: "assets/img/video-brand-video.webp",
       file: ""
@@ -552,7 +552,7 @@ window.PORTFOLIO = {
     {
       id: "parla-a2-ad",
       title: "Parla Italiano A2: a video ad in Egyptian Arabic",
-      youtubeId: "",
+      youtubeId: "sgzUw8TQIVU",
       vertical: true,
       poster: "assets/img/video-parla-a2-ad.webp",
       file: ""
