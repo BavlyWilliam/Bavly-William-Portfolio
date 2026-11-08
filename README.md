@@ -2,7 +2,7 @@
 
 # Bavly William | Portfolio
 
-**AI implementation and automation. Messy business input in, clean, checked data out.**
+**Connecting business processes, technology, and creative execution.**
 
 [![Live site](https://img.shields.io/badge/Live-Bavly--William--Portfolio-702C42?style=for-the-badge)](https://bavlywilliam.github.io/Bavly-William-Portfolio/)
 ![HTML](https://img.shields.io/badge/HTML-static-14213D?style=for-the-badge&logo=html5&logoColor=white)
@@ -55,7 +55,7 @@ Content and code are separate on purpose, the same way `clients.json` is separat
 
 | Path | What it does | Edit it? |
 |---|---|---|
-| `assets/js/data.js` | Every project, video, image, job and link | **Yes, this is the only file you edit** |
+| `assets/js/data.js` | Every project, video, image, job and link, including the YouTube channel | **Yes, this is the only file you edit** |
 | `assets/js/render.js` | Reads `data.js` and builds the sections | No |
 | `index.html` | Home page skeleton, SEO and link-preview tags, the hero demo | Rarely |
 | `case.html` | One template for every case study, chosen by `?p=<project id>` | No |
@@ -108,12 +108,15 @@ Empty lists hide their section.
 
 | Field | Notes |
 |---|---|
-| `id` | Unique. Projects link to it |
+| `id` | Unique. Projects link to it with `links.video` |
 | `title` | Shown under the player |
-| `youtubeId` | The part after `v=` in the YouTube link |
+| `youtubeId` | The part after `v=` in the YouTube link, or after `/shorts/` for a Short |
+| `vertical` | `true` for Shorts and other 9:16 videos: they get a tall frame and one grid column |
+| `poster` | Optional image shown before play, e.g. `assets/img/video-<id>.webp` (about 960 px). Without it, YouTube's thumbnail is used |
 | `file` | Or a local `.mp4` path, under 50 MB |
 
 A video with neither `youtubeId` nor `file` is hidden. The whole Videos section and its menu link stay hidden until at least one video has a source.
+A project whose `links.video` points at a video with a source shows "Watch the video", and its case-study page embeds the player under the header.
 
 ### `creative[]`
 
@@ -140,11 +143,13 @@ Add a `caseStudy` block to the project in `data.js` (copy the WhatsApp one). A "
 
 ## Add a video
 
-1. Upload to YouTube as Public or Unlisted.
-2. Copy the ID from the link, e.g. `https://www.youtube.com/watch?v=AbC123xYz` gives `AbC123xYz`.
-3. Paste it into the matching `youtubeId` in `data.js`.
+1. Upload to YouTube as Public or Unlisted, with embedding allowed.
+2. Copy the ID from the link: `https://www.youtube.com/watch?v=AbC123xYz` and `https://www.youtube.com/shorts/AbC123xYz` both give `AbC123xYz`.
+3. Paste it into the matching `youtubeId` in `data.js`. For a Short, keep `vertical: true`.
+4. Optional: export the video's thumbnail at about 960 px wide as `.webp` into `assets/img/` and set `poster`.
 
-The player loads YouTube only when the visitor presses play, which keeps the page fast.
+The player loads YouTube only when the visitor presses play, which keeps the page fast. With a `poster`, nothing at all loads from YouTube until then.
+The channel link (`links.youtube`) appears in the contact block and under the Videos section.
 
 ## Add creative work
 

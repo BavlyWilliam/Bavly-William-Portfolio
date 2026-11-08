@@ -50,6 +50,8 @@ window.PORTFOLIO = {
     github: "https://github.com/BavlyWilliam",
     linkedin: "https://www.linkedin.com/in/bavly-william-b5a27822a",
     behance: "https://www.behance.net/bavlywilliam",
+    // Your YouTube channel. Check the handle matches the one you claimed, then keep it here.
+    youtube: "https://www.youtube.com/@BavlyWilliam",
     // Set this only after the Notion page has no draft notes or private case studies under it:
     notion: ""
   },
@@ -266,7 +268,7 @@ window.PORTFOLIO = {
         code: "https://github.com/BavlyWilliam/Audio-Books-website",
         live: "https://bavlywilliam.github.io/Audio-Books-website/",
         notion: "",
-        video: ""
+        video: "parla-case-study"
       },
       caseStudy: {
         problem:
@@ -324,7 +326,7 @@ window.PORTFOLIO = {
       summary:
         "I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.",
       how:
-        "The assistant answers 330 tested scenarios without calling a model, and passes only what those don't cover to Gemini 3.1, which keeps token costs down. Approved by Meta; production hosting is in progress, so it doesn't answer customers yet.",
+        "The assistant answers more than 330 tested scenarios without calling a model and passes only what those don't cover to Gemini 3.1. Keeping that AI fallback small was the point: it keeps token use, and cost, down. Approved by Meta; production hosting is in progress, so it doesn't answer customers yet.",
       stack: ["Content strategy", "Meta Ads", "Creative production", "Python", "Gemini API"],
       image: "assets/img/cover-a1.webp",
       imageAlt: "Cover of the Parla Italiano A1 course book",
@@ -333,7 +335,7 @@ window.PORTFOLIO = {
         live: "",
         notion:
           "https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a",
-        video: ""
+        video: "parla-case-study"
       },
       caseStudy: {
         problem:
@@ -363,7 +365,7 @@ window.PORTFOLIO = {
           },
           {
             choice: "Scripted answers first, AI second",
-            why: "330 tested scenarios are answered without a model. Only questions they don't cover go to Gemini 3.1, which keeps token costs down and keeps the common answers exactly right."
+            why: "More than 330 tested scenarios are answered without a model. Only questions they don't cover go to Gemini 3.1, which keeps token use down and the common answers exactly right."
           },
           {
             choice: "Price guardrails and a human handoff",
@@ -467,7 +469,7 @@ window.PORTFOLIO = {
         code: "https://github.com/BavlyWilliam/Voice-Clonning-project.",
         live: "",
         notion: "",
-        video: ""
+        video: "parla-case-study"
       },
       caseStudy: {
         problem:
@@ -512,15 +514,49 @@ window.PORTFOLIO = {
   ],
 
   /*
-    Videos: upload to YouTube (Public or Unlisted) and paste the ID,
-    the part after "v=" in the link. Or put a short .mp4 (under 50 MB)
-    in assets/video/ and set `file`. Videos with neither are hidden,
-    and the whole section stays hidden until one has a source.
+    Videos: upload to YouTube (Public or Unlisted) and paste the ID:
+      youtube.com/watch?v=AbC123xYz  ->  "AbC123xYz"
+      youtube.com/shorts/AbC123xYz   ->  "AbC123xYz"
+    Or put a short .mp4 (under 50 MB) in assets/video/ and set `file`.
+    Videos with neither are hidden, and the whole section stays hidden
+    until one has a source.
+    `vertical: true` for Shorts and other 9:16 videos.
+    `poster` is the image shown before play (your own thumbnail, ~960 px,
+    .webp). Without it, YouTube's thumbnail is used.
+    The order here is the order on the page: lead with your best one.
   */
   videos: [
-    { id: "whatsapp-explainer", title: "How the WhatsApp purchase logger works", youtubeId: "", file: "" },
-    { id: "video-2", title: "Second video title", youtubeId: "", file: "" },
-    { id: "video-3", title: "Third video title", youtubeId: "", file: "" }
+    {
+      id: "parla-case-study",
+      title: "Parla Italiano case study: one request, a whole system",
+      youtubeId: "",
+      poster: "assets/img/video-parla-case-study.webp",
+      file: ""
+    },
+    {
+      id: "whatsapp-explainer",
+      title: "How the WhatsApp purchase logger works, in 49 seconds",
+      youtubeId: "",
+      vertical: true,
+      poster: "assets/img/video-whatsapp-explainer.webp",
+      file: ""
+    },
+    {
+      id: "brand-video",
+      title: "Who I am and what I fix, in 38 seconds",
+      youtubeId: "",
+      vertical: true,
+      poster: "assets/img/video-brand-video.webp",
+      file: ""
+    },
+    {
+      id: "parla-a2-ad",
+      title: "Parla Italiano A2: a video ad in Egyptian Arabic",
+      youtubeId: "",
+      vertical: true,
+      poster: "assets/img/video-parla-a2-ad.webp",
+      file: ""
+    }
   ],
 
   /*

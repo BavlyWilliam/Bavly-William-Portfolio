@@ -46,8 +46,8 @@
   var links = data.links || {};
   var projects = (data.projects || []).filter(function (p) { return !p.draft; });
   var videos = (data.videos || []).filter(function (v) { return v.youtubeId || v.file; });
-  var videoIds = {};
-  videos.forEach(function (v) { videoIds[v.id] = true; });
+  var videoById = {};
+  videos.forEach(function (v) { videoById[v.id] = v; });
 
   /* ---------- shared bindings (both pages) ---------- */
   var values = { availability: person.availability, email: person.email, updated: data.updated };
@@ -68,7 +68,7 @@
 
   var contactLinks = list("links");
   if (contactLinks) {
-    [["LinkedIn", links.linkedin], ["GitHub", links.github], ["Behance", links.behance], ["Notion", links.notion]]
+    [["LinkedIn", links.linkedin], ["GitHub", links.github], ["YouTube", links.youtube], ["Behance", links.behance], ["Notion", links.notion]]
       .forEach(function (pair) {
         if (pair[1]) contactLinks.appendChild(el("li", null, [link(pair[1], pair[0])]));
       });
@@ -101,7 +101,7 @@
     var videoList = list("videos");
     if (videoList && videos.length) {
       videos.forEach(function (v) {
-        videoList.appendChild(el("article", { class: "video", id: "video-" + v.id }, [videoPlayer(v), el("p", { class: "video__title", text: v.title })]));
+        videoList.appendChild(el("article", { class: "video" + (v.vertical ? " video--vertical" : ""), id: "video-" + v.id }, videoCaption(v)));
       });
       $("#videos").hidden = false;
       var navVideos = $('[data-nav="videos"]');
@@ -180,7 +180,7 @@
     if (l.live) items.push(el("li", null, [link(l.live, "Open live site")]));
     if (l.code) items.push(el("li", null, [link(l.code, "Read the code")]));
     if (l.notion) items.push(el("li", null, [link(l.notion, "Notion write-up")]));
-    if (l.video && videoIds[l.video]) items.push(el("li", null, [link("#video-" + l.video, "Watch the video")]));
+    if (l.video && videoById[l.video]) items.push(el("li", null, [link("#video-" + l.video, "Watch the video")]));
 
     return el("article", { class: "project" + (p.confidential ? " project--compact" : ""), id: "project-" + p.id }, [
       el("div", { class: "project__status" }, [statusPill(p.status)]),
@@ -200,20 +200,36 @@
     ]);
   }
 
+  function youtubeUrl(v) {
+    var id = encodeURIComponent(v.youtubeId);
+    return v.vertical ? "https://www.youtube.com/shorts/" + id : "https://www.youtube.com/watch?v=" + id;
+  }
+
+  // Player, title and a "Watch on YouTube" link: used on the home page and on case-study pages.
+  function videoCaption(v) {
+    return [
+      videoPlayer(v),
+      el("p", { class: "video__title", text: v.title }),
+      v.youtubeId ? el("p", { class: "video__more" }, [link(youtubeUrl(v), "Watch on YouTube")]) : null
+    ];
+  }
+
   function videoPlayer(v) {
-    var frame = el("div", { class: "video__frame" });
+    var frame = el("div", { class: "video__frame" + (v.vertical ? " video__frame--vertical" : "") });
     if (v.file) {
-      frame.appendChild(el("video", { src: v.file, controls: "", preload: "metadata", playsinline: "" }));
+      frame.appendChild(el("video", { src: v.file, poster: v.poster || null, controls: "", preload: "metadata", playsinline: "" }));
       return frame;
     }
     // Load YouTube only when the visitor asks for it: faster page, no tracking until then.
+    // With a poster (your own thumbnail), nothing loads from YouTube before play.
+    var poster = v.poster || "https://i.ytimg.com/vi/" + encodeURIComponent(v.youtubeId) + "/hqdefault.jpg";
     var button = el("button", { class: "video__play", type: "button", "aria-label": "Play video: " + v.title }, [
-      el("img", { src: "https://i.ytimg.com/vi/" + encodeURIComponent(v.youtubeId) + "/hqdefault.jpg", alt: "", loading: "lazy" }),
+      el("img", { src: poster, alt: "", loading: "lazy" }),
       el("span", { text: "Play video" })
     ]);
     button.addEventListener("click", function () {
       frame.replaceChild(el("iframe", {
-        src: "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(v.youtubeId) + "?autoplay=1&rel=0",
+        src: "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(v.youtubeId) + "?autoplay=1&rel=0&playsinline=1",
         title: v.title,
         allow: "autoplay; encrypted-media; picture-in-picture",
         allowfullscreen: ""
@@ -271,11 +287,12 @@
       return el("ol", { class: "flow" }, steps.map(function (s) { return el("li", { class: "flow__step", text: s }); }));
     }
 
+    var caseVideo = l.video ? videoById[l.video] : null;
     var linkItems = [];
+    if (caseVideo) linkItems.push(el("li", null, [link("#case-video", "Watch the video")]));
     if (l.live) linkItems.push(el("li", null, [link(l.live, "Open live site")]));
     if (l.code) linkItems.push(el("li", null, [link(l.code, "Read the code")]));
     if (l.notion) linkItems.push(el("li", null, [link(l.notion, "Notion write-up")]));
-    if (l.video && videoIds[l.video]) linkItems.push(el("li", null, [link("index.html#video-" + l.video, "Watch the video")]));
 
     var decisionsBody = c.decisions && c.decisions.length
       ? el("div", { class: "case__pairs" }, c.decisions.map(function (d) {
@@ -296,6 +313,10 @@
         p.stack && p.stack.length ? el("p", { class: "project__stack" }, [el("span", { class: "project__stack-label", text: "Built with: " }), p.stack.join(", ")]) : null,
         linkItems.length ? el("ul", { class: "project__links" }, linkItems) : null
       ]),
+      caseVideo ? el("section", { class: "case__section", id: "case-video" }, [
+        el("h2", { class: "case__h2", text: "Watch it" }),
+        el("div", { class: "case__video" + (caseVideo.vertical ? " case__video--vertical" : "") }, videoCaption(caseVideo))
+      ]) : null,
       section("The problem", c.problem ? el("p", { class: "case__lead", text: c.problem }) : null),
       section("Constraints", bullets(c.constraints)),
       section("How it works", flow(c.flow)),
