@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voice clone kit | Bavly William</title>
+  <meta name="description" content="Clones a voice from a 1 to 2 minute recording and reads any text in 23 languages. Runs on your own PC, and nothing is uploaded.">
+  <meta name="theme-color" content="#101B35">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Voice clone kit | Bavly William">
+  <meta property="og:description" content="Clones a voice from a 1 to 2 minute recording and reads any text in 23 languages. Runs on your own PC, and nothing is uploaded.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-voice-kit.html">
+  <link rel="canonical" href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-voice-kit.html">
+  <meta property="og:image" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="case" data-static-cases="whatsapp audio-companion parla-system orchestrator voice-kit" data-case-id="voice-kit">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="Bavly William, home">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap case-wrap" data-case><article class="case"><p class="case__back"><a href="index.html#work">All work</a></p>
+<header class="case__head"><div class="case__status"><span class="status status--working">Working build</span></div>
+<h1 class="case__title">Voice clone kit</h1>
+<p class="case__context">Personal project, used to produce the course audio</p>
+<p class="case__summary">Clones a voice from a 1 to 2 minute recording and reads any text in 23 languages. Runs on your own PC, and nothing is uploaded.</p>
+<p class="project__stack"><span class="project__stack-label">Built with: </span>
+Python, Gradio, PyTorch</p>
+<ul class="project__links"><li><a href="#case-video">Watch the video</a></li>
+<li><a href="https://github.com/BavlyWilliam/voice-clone-kit" rel="noopener">Read the code</a></li></ul></header>
+<section class="case__section" id="case-video"><h2 class="case__h2">Watch it</h2>
+<div class="case__video"><div class="video__frame"><a class="video__play" href="https://www.youtube.com/watch?v=yesqCWwKWEQ" rel="noopener" aria-label="Play video: Parla Italiano case study: one request, a whole system"><img src="assets/img/video-parla-case-study.webp" alt loading="lazy">
+<span>Play video</span></a></div>
+<p class="video__title">Parla Italiano case study: one request, a whole system</p>
+<p class="video__more"><a href="https://www.youtube.com/watch?v=yesqCWwKWEQ" rel="noopener">Watch on YouTube</a></p></div></section>
+<section class="case__section"><h2 class="case__h2">The problem</h2>
+<p class="case__lead">The course needed narration for 22 units in the teacher's voice, without hours of studio recording or uploading his voice to a paid service.</p></section>
+<section class="case__section"><h2 class="case__h2">Constraints</h2>
+<ul class="case__list"><li>Runs on a Windows PC, free.</li>
+<li>Nothing leaves the machine.</li>
+<li>The speaker must agree to having their voice cloned.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">How it works</h2>
+<ol class="flow"><li class="flow__step">1 to 2 minute recording</li>
+<li class="flow__step">Pick the best 10-second clip</li>
+<li class="flow__step">Create the voice</li>
+<li class="flow__step">Type text, choose tone and language</li>
+<li class="flow__step">Quality check</li>
+<li class="flow__step">.wav or .mp3</li></ol></section>
+<section class="case__section"><h2 class="case__h2">Decisions and why</h2>
+<div class="case__pairs"><div class="case__decision"><h3 class="case__h3">Local and open source</h3>
+<p>Built on Chatterbox (MIT licence), so there's no subscription and no recording is uploaded anywhere.</p></div>
+<div class="case__decision"><h3 class="case__h3">Consent built in</h3>
+<p>A voice can't be created until the consent box is ticked.</p></div>
+<div class="case__decision"><h3 class="case__h3">Check every output</h3>
+<p>Each result is scored for how close it sounds to the voice and whether every word was actually spoken, so bad takes are caught before anyone hears them.</p></div>
+<div class="case__decision"><h3 class="case__h3">A short install path on Windows</h3>
+<p>PyTorch's files break Windows' 260-character path limit in deep folders, so the setup script installs to a short path.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">Results</h2>
+<ul class="case__list"><li>Used to produce the A1 and A2 course audio, with the teacher's permission.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Limits</h2>
+<ul class="case__list"><li>Windows only. Real time with an NVIDIA GPU, several times slower on CPU.</li></ul></section></article>
+<nav class="case__next" aria-label="Next case study"><p class="case__next-label">Next case study</p>
+<a href="case-whatsapp.html" class="case__next-link">WhatsApp purchase logger</a></nav></main>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__inner">
+      <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+      <div class="contact__body">
+        <div class="contact__brand" data-brand><img src="assets/img/bav-automations-logo.svg" alt="BAV Automations" width="130" height="137" loading="lazy">
+<p>Freelance builds run under my studio name, BAV Automations.</p></div>
+        <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+        <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+        <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+        <p class="contact__whatsapp" data-whatsapp-wrap><a data-bind-whatsapp href="https://wa.me/201271136118">WhatsApp: +20 127 113 6118</a></p>
+        <ul class="contact__links" data-list="links"><li><a href="https://www.linkedin.com/in/bavly-william-b5a27822a" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/BavlyWilliam" rel="noopener">GitHub</a></li>
+<li><a href="https://www.youtube.com/@BavlyWilliamAI" rel="noopener">YouTube</a></li>
+<li><a href="https://www.behance.net/bavlywilliam" rel="noopener">Behance</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>

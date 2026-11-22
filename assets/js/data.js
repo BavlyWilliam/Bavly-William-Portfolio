@@ -6,9 +6,11 @@
   here, and the code that draws the pages (render.js) never changes.
 
   To add a project: copy one block inside `projects`, change the text,
-  put its image in assets/img/, save, commit, push.
+  put its image in assets/img/, save, then run
+      node tools/prerender.js
+  and commit and push everything it changed.
   Give it a `caseStudy` block and it automatically gets its own page
-  at case.html?p=<id>.
+  at case-<id>.html (and case.html?p=<id> keeps working).
 
   Honesty rules:
   - `status` must be something you can defend in an interview:
@@ -159,7 +161,7 @@ window.PORTFOLIO = {
       context: "Freelance client, small business",
       status: "working",
       summary:
-        "Selenium drives WhatsApp Web directly in Firefox, classifies every message in the client's purchase group, writes each purchase to Google Sheets, and turns the data into a business analysis: top spender against budget, top vendor and top-spending project.",
+        "Selenium drives WhatsApp Web directly in Firefox, classifies every message in the client's purchase group and writes each purchase to Google Sheets, where an analysis tab shows the top spender against budget, the top vendor and the top-spending project.",
       how:
         "A rule-based parser reads the standard template. Messages it can't read go to Gemini, and the answer passes the same validator before anything is written. Each client has its own sheet, token and log.",
       stack: ["Python", "Selenium", "Google Sheets API", "OAuth", "Gemini API"],
@@ -188,7 +190,7 @@ window.PORTFOLIO = {
           "Validator",
           "AI fallback (Gemini), then the validator again",
           "Google Sheet",
-          "Analysis: top spender against budget, top vendor, top-spending project"
+          "Analysis in the sheet: top spender against budget, top vendor, top-spending project"
         ],
         decisions: [
           {
@@ -219,7 +221,11 @@ window.PORTFOLIO = {
         broke: [
           {
             issue: "Restarting the script skipped messages sent while it was off.",
-            fix: "Saved state between runs and reconciled against the sheet, so a restart picks up where it stopped."
+            fix: "At start-up it rebuilds the list of logged messages from the sheet itself, so a restart skips what is already there and picks up what is new."
+          },
+          {
+            issue: "After a restart, the duplicate check read the wrong sheet column, so messages already logged could be written again.",
+            fix: "Writing and reading now share one column layout, and a pytest test writes a row and checks that a restart recognises it."
           },
           {
             issue: "Google access expired every 7 days.",
@@ -238,7 +244,8 @@ window.PORTFOLIO = {
         results: [
           "Runs end to end: message in, validated row in the client's sheet.",
           "The logged data answers the owner's real questions: who spends most against their budget, which vendor gets the most money, and which project costs the most.",
-          "Handles typos in field names through the AI fallback, with every AI row validated and labelled."
+          "Handles typos in field names through the AI fallback, with every AI row validated and labelled.",
+          "A pytest suite covers the parser, the validator, the AI fallback's handling and restart de-duplication, with no network calls."
         ],
         limits: [
           "WhatsApp's terms restrict unofficial automation, so this suits a business's own groups, not mass use.",
@@ -247,9 +254,8 @@ window.PORTFOLIO = {
           "It runs while the PC is on. There is no server yet."
         ],
         next: [
-          "Move saved state from JSON files to SQLite.",
-          "Run it as a Windows background task so it survives restarts.",
-          "Replace print-style checks with a pytest test suite."
+          "Move message history to SQLite, with a retry queue for failed sheet writes.",
+          "Run it as a Windows background task so it survives restarts."
         ]
       }
     },
@@ -262,8 +268,8 @@ window.PORTFOLIO = {
       summary:
         "Book owners scan a QR code printed in the book and get every unit's audio on their phone. No app, no account, no download.",
       how:
-        "Static site on GitHub Pages with audio streamed from Cloudflare R2. Each unit has its own link, so a QR code can open a specific lesson.",
-      stack: ["HTML", "JavaScript", "GitHub Pages", "Cloudflare R2", "Python"],
+        "Static site on GitHub Pages with audio streamed from Cloudflare R2. Each unit has its own link, so a QR code can open a specific lesson. A small Cloudflare Worker counts each scan before opening the page.",
+      stack: ["HTML", "JavaScript", "GitHub Pages", "Cloudflare R2", "Cloudflare Workers", "Cloudflare D1", "Python"],
       image: "assets/img/cover-a2.webp",
       imageAlt: "Cover of the Parla Italiano A2 course book",
       links: {
@@ -282,6 +288,7 @@ window.PORTFOLIO = {
         ],
         flow: [
           "QR code in the book",
+          "Cloudflare Worker counts the scan (D1)",
           "Static page on GitHub Pages",
           "Unit link (#unit-07)",
           "Audio streamed from Cloudflare R2",
@@ -289,8 +296,8 @@ window.PORTFOLIO = {
         ],
         decisions: [
           {
-            choice: "A static site with no backend",
-            why: "Nothing to maintain or patch, and GitHub Pages hosts it for free."
+            choice: "Static pages, plus one tiny Worker",
+            why: "The pages have no backend to maintain, and GitHub Pages hosts them for free. The only server code is a Cloudflare Worker that counts a scan and redirects, on the free plan."
           },
           {
             choice: "Audio on Cloudflare R2, not in the repository",
@@ -305,18 +312,19 @@ window.PORTFOLIO = {
             why: "When I added the new A1 and A2 pages, the original A1 page stayed at the same address, so QR codes already printed in books still work."
           },
           {
-            choice: "No cookies, no tracking",
-            why: "Students scan and listen. Nothing else."
+            choice: "First-party counts, no third-party trackers",
+            why: "The Worker and the pages record scans, visits and which units are played in my own D1 database: time, QR code, city and device type. No IP address, name or phone number is stored, no analytics company sees the data, and the privacy page says so."
           }
         ],
         broke: [],
         results: [
           "Live and used by people who own the printed book.",
           "A1 (10 units) and A2 (12 units) audio pages, each unit reachable from its own QR code.",
-          "Narration produced with my voice-clone kit from the teacher's own recording, with his permission."
+          "Narration produced with my voice-clone kit from the teacher's own recording, with his permission.",
+          "A scan funnel per QR code: scanned, page opened, unit played, Messenger tapped."
         ],
-        limits: ["No usage numbers yet, because the site deliberately has no tracking."],
-        next: ["First-party QR scan counts on Cloudflare Workers and D1 (designed, not built), so usage can be measured without third-party trackers."]
+        limits: ["QR codes printed before 24 October 2026 open the page directly, so they count as visits without scan details."],
+        next: ["Use the scan funnel to see which units and which printed placements students actually use."]
       }
     },
     {
@@ -328,8 +336,8 @@ window.PORTFOLIO = {
       summary:
         "I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.",
       how:
-        "The assistant answers more than 330 tested scenarios without calling a model and passes only what those don't cover to Gemini 3.1. Keeping that AI fallback small was the point: it keeps token use, and cost, down. Every chat now gets an answer in seconds instead of hours, without hiring someone to reply by hand.",
-      stack: ["Content strategy", "Meta Ads", "Creative production", "Python", "Gemini API"],
+        "Scripted answers handle the predictable questions without calling a model, and more than 330 automated tests check those rules and conversation paths. Only what the scripts don't cover goes to Gemini 3.1, with Groq as a backup. Keeping that AI fallback small was the point: it keeps token use, and cost, down. Every chat now gets an answer in seconds instead of hours, without hiring someone to reply by hand.",
+      stack: ["Content strategy", "Meta Ads", "Creative production", "Python", "FastAPI", "Messenger Platform", "Gemini API", "Groq API", "pytest"],
       image: "assets/img/cover-a1.webp",
       imageAlt: "Cover of the Parla Italiano A1 course book",
       links: {
@@ -337,7 +345,7 @@ window.PORTFOLIO = {
         live: "",
         notion:
           "https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a",
-        video: "parla-case-study"
+        video: "sales-assistant"
       },
       caseStudy: {
         problem:
@@ -353,7 +361,7 @@ window.PORTFOLIO = {
           "Rebranded Facebook page, new Instagram page",
           "Meta ads",
           "Sales chats",
-          "Sales assistant: scripted scenarios first, Gemini 3.1 fallback, human handoff",
+          "Sales assistant: scripted answers first, Gemini 3.1 fallback (Groq as backup), human handoff",
           "A1 and A2 books"
         ],
         decisions: [
@@ -367,7 +375,7 @@ window.PORTFOLIO = {
           },
           {
             choice: "Scripted answers first, AI second",
-            why: "More than 330 tested scenarios are answered without a model. Only questions they don't cover go to Gemini 3.1, which keeps token use down and the common answers exactly right."
+            why: "Predictable questions are answered by scripted rules, with more than 330 automated tests checking them. Only questions they don't cover go to Gemini 3.1 (Groq if Gemini is unavailable), which keeps token use down and the common answers exactly right."
           },
           {
             choice: "Price guardrails and a human handoff",
@@ -469,7 +477,7 @@ window.PORTFOLIO = {
       image: "",
       imageAlt: "",
       links: {
-        code: "https://github.com/BavlyWilliam/Voice-Clonning-project.",
+        code: "https://github.com/BavlyWilliam/voice-clone-kit",
         live: "",
         notion: "",
         video: "parla-case-study"
@@ -534,6 +542,14 @@ window.PORTFOLIO = {
       title: "Parla Italiano case study: one request, a whole system",
       youtubeId: "yesqCWwKWEQ",
       poster: "assets/img/video-parla-case-study.webp",
+      file: ""
+    },
+    {
+      id: "sales-assistant",
+      title: "How I built an AI sales assistant for a Facebook page",
+      youtubeId: "8Q2z6JJwGhY",
+      // Export its thumbnail as assets/img/video-sales-assistant.webp and put the path here:
+      poster: "",
       file: ""
     },
     {

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhatsApp purchase logger | Bavly William</title>
+  <meta name="description" content="Selenium drives WhatsApp Web directly in Firefox, classifies every message in the client's purchase group and writes each purchase to Google Sheets, where an analysis tab shows the top spender against budget, the top vendor and the top-spending project.">
+  <meta name="theme-color" content="#101B35">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WhatsApp purchase logger | Bavly William">
+  <meta property="og:description" content="Selenium drives WhatsApp Web directly in Firefox, classifies every message in the client's purchase group and writes each purchase to Google Sheets, where an analysis tab shows the top spender against budget, the top vendor and the top-spending project.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-whatsapp.html">
+  <link rel="canonical" href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-whatsapp.html">
+  <meta property="og:image" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="case" data-static-cases="whatsapp audio-companion parla-system orchestrator voice-kit" data-case-id="whatsapp">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="Bavly William, home">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap case-wrap" data-case><article class="case"><p class="case__back"><a href="index.html#work">All work</a></p>
+<header class="case__head"><div class="case__status"><span class="status status--working">Working build</span></div>
+<h1 class="case__title">WhatsApp purchase logger</h1>
+<p class="case__context">Freelance client, small business</p>
+<p class="case__summary">Selenium drives WhatsApp Web directly in Firefox, classifies every message in the client's purchase group and writes each purchase to Google Sheets, where an analysis tab shows the top spender against budget, the top vendor and the top-spending project.</p>
+<p class="project__stack"><span class="project__stack-label">Built with: </span>
+Python, Selenium, Google Sheets API, OAuth, Gemini API</p>
+<ul class="project__links"><li><a href="#case-video">Watch the video</a></li>
+<li><a href="https://github.com/BavlyWilliam/Whatsapp-accounting-automation" rel="noopener">Read the code</a></li></ul></header>
+<section class="case__section" id="case-video"><h2 class="case__h2">Watch it</h2>
+<div class="case__video case__video--vertical"><div class="video__frame video__frame--vertical"><a class="video__play" href="https://www.youtube.com/shorts/1Zm951PmB_0" rel="noopener" aria-label="Play video: How the WhatsApp purchase logger works, in 49 seconds"><img src="assets/img/video-whatsapp-explainer.webp" alt loading="lazy">
+<span>Play video</span></a></div>
+<p class="video__title">How the WhatsApp purchase logger works, in 49 seconds</p>
+<p class="video__more"><a href="https://www.youtube.com/shorts/1Zm951PmB_0" rel="noopener">Watch on YouTube</a></p></div></section>
+<section class="case__section"><h2 class="case__h2">The problem</h2>
+<p class="case__lead">Staff at a small business report purchases in a dedicated WhatsApp group. The owner needed every purchase in a spreadsheet, by person, to compare spending against budget.</p></section>
+<section class="case__section"><h2 class="case__h2">Constraints</h2>
+<ul class="case__list"><li>Free or close to free to run.</li>
+<li>Staff keep using WhatsApp. No new app, no new habit.</li>
+<li>Messages are typed by people: typos, missing fields, Arabic and English.</li>
+<li>Runs on a Windows PC.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">How it works</h2>
+<ol class="flow"><li class="flow__step">WhatsApp group</li>
+<li class="flow__step">Selenium driving WhatsApp Web in Firefox</li>
+<li class="flow__step">Classify the message</li>
+<li class="flow__step">Template parser</li>
+<li class="flow__step">Validator</li>
+<li class="flow__step">AI fallback (Gemini), then the validator again</li>
+<li class="flow__step">Google Sheet</li>
+<li class="flow__step">Analysis in the sheet: top spender against budget, top vendor, top-spending project</li></ol></section>
+<section class="case__section"><h2 class="case__h2">Decisions and why</h2>
+<div class="case__pairs"><div class="case__decision"><h3 class="case__h3">Drive WhatsApp Web directly with Selenium in Firefox</h3>
+<p>No paid WhatsApp API and no third-party service: it reads the group the client already uses. Firefox proved more reliable than Chrome for this in an earlier WhatsApp project.</p></div>
+<div class="case__decision"><h3 class="case__h3">Rules first, AI second</h3>
+<p>A regex parser reads well-formed messages for free and the same way every time. Only messages it can't read go to Gemini, which keeps cost and surprises down.</p></div>
+<div class="case__decision"><h3 class="case__h3">Never trust the model's answer</h3>
+<p>Whatever Gemini returns passes the same validator as a typed template, so a model mistake can't write a bad row. AI rows are marked 'ai' in the sheet for spot checks.</p></div>
+<div class="case__decision"><h3 class="case__h3">Take buyer and date from WhatsApp, not from the message</h3>
+<p>The sender's contact name is the buyer and the message timestamp is the date, so staff type less and can't get those two wrong.</p></div>
+<div class="case__decision"><h3 class="case__h3">No keyword required</h3>
+<p>The group exists only for purchases, so any message with item, quantity and amount counts. One less thing for staff to remember.</p></div>
+<div class="case__decision"><h3 class="case__h3">One config block per client</h3>
+<p>Each client has its own group, sheet, token and log in clients.json, so a new client is configuration, not new code.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">What broke, and the fix</h2>
+<div class="case__pairs"><div class="case__pair"><p class="case__pair-a"><span class="case__pair-label">Problem: </span>
+Restarting the script skipped messages sent while it was off.</p>
+<p class="case__pair-b"><span class="case__pair-label">Fix: </span>
+At start-up it rebuilds the list of logged messages from the sheet itself, so a restart skips what is already there and picks up what is new.</p></div>
+<div class="case__pair"><p class="case__pair-a"><span class="case__pair-label">Problem: </span>
+After a restart, the duplicate check read the wrong sheet column, so messages already logged could be written again.</p>
+<p class="case__pair-b"><span class="case__pair-label">Fix: </span>
+Writing and reading now share one column layout, and a pytest test writes a row and checks that a restart recognises it.</p></div>
+<div class="case__pair"><p class="case__pair-a"><span class="case__pair-label">Problem: </span>
+Google access expired every 7 days.</p>
+<p class="case__pair-b"><span class="case__pair-label">Fix: </span>
+Published the OAuth app, which removes the 7-day token expiry that applies to apps in testing.</p></div>
+<div class="case__pair"><p class="case__pair-a"><span class="case__pair-label">Problem: </span>
+The listener silently read the wrong chat.</p>
+<p class="case__pair-b"><span class="case__pair-label">Fix: </span>
+It now checks the chat header after opening the group and on every polling cycle, and stops loudly on a mismatch instead of logging someone else's messages.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">Results</h2>
+<ul class="case__list"><li>Runs end to end: message in, validated row in the client's sheet.</li>
+<li>The logged data answers the owner's real questions: who spends most against their budget, which vendor gets the most money, and which project costs the most.</li>
+<li>Handles typos in field names through the AI fallback, with every AI row validated and labelled.</li>
+<li>A pytest suite covers the parser, the validator, the AI fallback's handling and restart de-duplication, with no network calls.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Limits</h2>
+<ul class="case__list"><li>WhatsApp's terms restrict unofficial automation, so this suits a business's own groups, not mass use.</li>
+<li>It reads only messages loaded on screen.</li>
+<li>Identical messages from one sender in the same minute count as one.</li>
+<li>It runs while the PC is on. There is no server yet.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Next</h2>
+<ul class="case__list"><li>Move message history to SQLite, with a retry queue for failed sheet writes.</li>
+<li>Run it as a Windows background task so it survives restarts.</li></ul></section></article>
+<nav class="case__next" aria-label="Next case study"><p class="case__next-label">Next case study</p>
+<a href="case-audio-companion.html" class="case__next-link">Parla Italiano audio companion</a></nav></main>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__inner">
+      <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+      <div class="contact__body">
+        <div class="contact__brand" data-brand><img src="assets/img/bav-automations-logo.svg" alt="BAV Automations" width="130" height="137" loading="lazy">
+<p>Freelance builds run under my studio name, BAV Automations.</p></div>
+        <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+        <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+        <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+        <p class="contact__whatsapp" data-whatsapp-wrap><a data-bind-whatsapp href="https://wa.me/201271136118">WhatsApp: +20 127 113 6118</a></p>
+        <ul class="contact__links" data-list="links"><li><a href="https://www.linkedin.com/in/bavly-william-b5a27822a" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/BavlyWilliam" rel="noopener">GitHub</a></li>
+<li><a href="https://www.youtube.com/@BavlyWilliamAI" rel="noopener">YouTube</a></li>
+<li><a href="https://www.behance.net/bavlywilliam" rel="noopener">Behance</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>

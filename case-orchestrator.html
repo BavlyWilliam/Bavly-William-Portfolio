@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI model orchestrator | Bavly William</title>
+  <meta name="description" content="Takes a request, asks follow-up questions when something important is missing, and recommends an AI model with its reasons, using live benchmark data.">
+  <meta name="theme-color" content="#101B35">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI model orchestrator | Bavly William">
+  <meta property="og:description" content="Takes a request, asks follow-up questions when something important is missing, and recommends an AI model with its reasons, using live benchmark data.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-orchestrator.html">
+  <link rel="canonical" href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-orchestrator.html">
+  <meta property="og:image" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="case" data-static-cases="whatsapp audio-companion parla-system orchestrator voice-kit" data-case-id="orchestrator">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="Bavly William, home">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap case-wrap" data-case><article class="case"><p class="case__back"><a href="index.html#work">All work</a></p>
+<header class="case__head"><div class="case__status"><span class="status status--prototype">Prototype</span></div>
+<h1 class="case__title">AI model orchestrator</h1>
+<p class="case__context">Personal project</p>
+<p class="case__summary">Takes a request, asks follow-up questions when something important is missing, and recommends an AI model with its reasons, using live benchmark data.</p>
+<p class="project__stack"><span class="project__stack-label">Built with: </span>
+Python, Gemini API, Pydantic, SQLite</p>
+<ul class="project__links"><li><a href="https://github.com/BavlyWilliam/AI-Orchestrator" rel="noopener">Read the code</a></li></ul></header>
+<section class="case__section"><h2 class="case__h2">The problem</h2>
+<p class="case__lead">Picking an AI model for a task usually means guessing, or using one model for everything regardless of cost, speed or quality.</p></section>
+<section class="case__section"><h2 class="case__h2">Constraints</h2>
+<ul class="case__list"><li>Recommendations must come with reasons, not just a name.</li>
+<li>Benchmarks change, so the data has to be live.</li>
+<li>Every decision should be traceable afterwards.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">How it works</h2>
+<ol class="flow"><li class="flow__step">User request</li>
+<li class="flow__step">Clarify missing information</li>
+<li class="flow__step">Analyse requirements</li>
+<li class="flow__step">Score and optionally improve the prompt</li>
+<li class="flow__step">Score models with benchmark data and constraints</li>
+<li class="flow__step">Recommend with reasons</li>
+<li class="flow__step">Log to SQLite</li></ol></section>
+<section class="case__section"><h2 class="case__h2">Decisions and why</h2>
+<div class="case__pairs"><div class="case__decision"><h3 class="case__h3">Structured outputs with Pydantic</h3>
+<p>Gemini's answers are parsed into typed objects and rejected if they don't fit, instead of scraping free text.</p></div>
+<div class="case__decision"><h3 class="case__h3">Ask before guessing</h3>
+<p>If something that changes the answer is missing, the tool asks a clarifying question first.</p></div>
+<div class="case__decision"><h3 class="case__h3">SQLite with foreign keys and parameterised queries</h3>
+<p>Requests, analyses and recommendations are linked and queryable, and parameters keep user text out of the SQL itself.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">Results</h2>
+<ul class="case__list"><li>Working command-line prototype with live benchmark data and a full history of runs.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Limits</h2>
+<ul class="case__list"><li>Recommendations depend on what the benchmark data covers.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Next</h2>
+<ul class="case__list"><li>Evaluate recommendations against a labelled set of tasks.</li></ul></section></article>
+<nav class="case__next" aria-label="Next case study"><p class="case__next-label">Next case study</p>
+<a href="case-voice-kit.html" class="case__next-link">Voice clone kit</a></nav></main>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__inner">
+      <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+      <div class="contact__body">
+        <div class="contact__brand" data-brand><img src="assets/img/bav-automations-logo.svg" alt="BAV Automations" width="130" height="137" loading="lazy">
+<p>Freelance builds run under my studio name, BAV Automations.</p></div>
+        <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+        <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+        <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+        <p class="contact__whatsapp" data-whatsapp-wrap><a data-bind-whatsapp href="https://wa.me/201271136118">WhatsApp: +20 127 113 6118</a></p>
+        <ul class="contact__links" data-list="links"><li><a href="https://www.linkedin.com/in/bavly-william-b5a27822a" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/BavlyWilliam" rel="noopener">GitHub</a></li>
+<li><a href="https://www.youtube.com/@BavlyWilliamAI" rel="noopener">YouTube</a></li>
+<li><a href="https://www.behance.net/bavlywilliam" rel="noopener">Behance</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parla Italiano audio companion | Bavly William</title>
+  <meta name="description" content="Book owners scan a QR code printed in the book and get every unit's audio on their phone. No app, no account, no download.">
+  <meta name="theme-color" content="#101B35">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Parla Italiano audio companion | Bavly William">
+  <meta property="og:description" content="Book owners scan a QR code printed in the book and get every unit's audio on their phone. No app, no account, no download.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-audio-companion.html">
+  <link rel="canonical" href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-audio-companion.html">
+  <meta property="og:image" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="case" data-static-cases="whatsapp audio-companion parla-system orchestrator voice-kit" data-case-id="audio-companion">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="Bavly William, home">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap case-wrap" data-case><article class="case"><p class="case__back"><a href="index.html#work">All work</a></p>
+<header class="case__head"><div class="case__status"><span class="status status--live">Live</span></div>
+<h1 class="case__title">Parla Italiano audio companion</h1>
+<p class="case__context">For a printed Italian course book</p>
+<p class="case__summary">Book owners scan a QR code printed in the book and get every unit's audio on their phone. No app, no account, no download.</p>
+<p class="project__stack"><span class="project__stack-label">Built with: </span>
+HTML, JavaScript, GitHub Pages, Cloudflare R2, Cloudflare Workers, Cloudflare D1, Python</p>
+<ul class="project__links"><li><a href="#case-video">Watch the video</a></li>
+<li><a href="https://bavlywilliam.github.io/Audio-Books-website/" rel="noopener">Open live site</a></li>
+<li><a href="https://github.com/BavlyWilliam/Audio-Books-website" rel="noopener">Read the code</a></li></ul></header>
+<section class="case__section" id="case-video"><h2 class="case__h2">Watch it</h2>
+<div class="case__video"><div class="video__frame"><a class="video__play" href="https://www.youtube.com/watch?v=yesqCWwKWEQ" rel="noopener" aria-label="Play video: Parla Italiano case study: one request, a whole system"><img src="assets/img/video-parla-case-study.webp" alt loading="lazy">
+<span>Play video</span></a></div>
+<p class="video__title">Parla Italiano case study: one request, a whole system</p>
+<p class="video__more"><a href="https://www.youtube.com/watch?v=yesqCWwKWEQ" rel="noopener">Watch on YouTube</a></p></div></section>
+<section class="case__section"><h2 class="case__h2">The problem</h2>
+<p class="case__lead">Students of a printed Italian course book needed the audio for every unit on their phones. Apps, accounts and large downloads all lose people before they press play.</p></section>
+<section class="case__section"><h2 class="case__h2">Constraints</h2>
+<ul class="case__list"><li>Must play on cheap Android phones and on iPhones.</li>
+<li>QR codes are printed, so a link can never change once a book is sold.</li>
+<li>Hosting cost close to zero.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">How it works</h2>
+<ol class="flow"><li class="flow__step">QR code in the book</li>
+<li class="flow__step">Cloudflare Worker counts the scan (D1)</li>
+<li class="flow__step">Static page on GitHub Pages</li>
+<li class="flow__step">Unit link (#unit-07)</li>
+<li class="flow__step">Audio streamed from Cloudflare R2</li>
+<li class="flow__step">Student's phone</li></ol></section>
+<section class="case__section"><h2 class="case__h2">Decisions and why</h2>
+<div class="case__pairs"><div class="case__decision"><h3 class="case__h3">Static pages, plus one tiny Worker</h3>
+<p>The pages have no backend to maintain, and GitHub Pages hosts them for free. The only server code is a Cloudflare Worker that counts a scan and redirects, on the free plan.</p></div>
+<div class="case__decision"><h3 class="case__h3">Audio on Cloudflare R2, not in the repository</h3>
+<p>Keeps large files out of git and streams them to the browser.</p></div>
+<div class="case__decision"><h3 class="case__h3">MP3 at 64 kbps mono</h3>
+<p>Plays on both iPhone and Android and loads quickly on mobile data. Speech doesn't need more.</p></div>
+<div class="case__decision"><h3 class="case__h3">Never break a printed link</h3>
+<p>When I added the new A1 and A2 pages, the original A1 page stayed at the same address, so QR codes already printed in books still work.</p></div>
+<div class="case__decision"><h3 class="case__h3">First-party counts, no third-party trackers</h3>
+<p>The Worker and the pages record scans, visits and which units are played in my own D1 database: time, QR code, city and device type. No IP address, name or phone number is stored, no analytics company sees the data, and the privacy page says so.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">Results</h2>
+<ul class="case__list"><li>Live and used by people who own the printed book.</li>
+<li>A1 (10 units) and A2 (12 units) audio pages, each unit reachable from its own QR code.</li>
+<li>Narration produced with my voice-clone kit from the teacher's own recording, with his permission.</li>
+<li>A scan funnel per QR code: scanned, page opened, unit played, Messenger tapped.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Limits</h2>
+<ul class="case__list"><li>QR codes printed before 24 October 2026 open the page directly, so they count as visits without scan details.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Next</h2>
+<ul class="case__list"><li>Use the scan funnel to see which units and which printed placements students actually use.</li></ul></section></article>
+<nav class="case__next" aria-label="Next case study"><p class="case__next-label">Next case study</p>
+<a href="case-parla-system.html" class="case__next-link">Parla Italiano marketing, creative and AI sales assistant</a></nav></main>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__inner">
+      <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+      <div class="contact__body">
+        <div class="contact__brand" data-brand><img src="assets/img/bav-automations-logo.svg" alt="BAV Automations" width="130" height="137" loading="lazy">
+<p>Freelance builds run under my studio name, BAV Automations.</p></div>
+        <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+        <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+        <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+        <p class="contact__whatsapp" data-whatsapp-wrap><a data-bind-whatsapp href="https://wa.me/201271136118">WhatsApp: +20 127 113 6118</a></p>
+        <ul class="contact__links" data-list="links"><li><a href="https://www.linkedin.com/in/bavly-william-b5a27822a" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/BavlyWilliam" rel="noopener">GitHub</a></li>
+<li><a href="https://www.youtube.com/@BavlyWilliamAI" rel="noopener">YouTube</a></li>
+<li><a href="https://www.behance.net/bavlywilliam" rel="noopener">Behance</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>

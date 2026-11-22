@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parla Italiano marketing, creative and AI sales assistant | Bavly William</title>
+  <meta name="description" content="I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.">
+  <meta name="theme-color" content="#101B35">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Parla Italiano marketing, creative and AI sales assistant | Bavly William">
+  <meta property="og:description" content="I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.">
+  <meta property="og:url" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html">
+  <link rel="canonical" href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html">
+  <meta property="og:image" content="https://bavlywilliam.github.io/Bavly-William-Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="case" data-static-cases="whatsapp audio-companion parla-system orchestrator voice-kit" data-case-id="parla-system">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="Bavly William, home">
+        <img class="brand__logo" src="assets/img/favicon.svg" width="32" height="32" alt="">
+        <span class="brand__name">Bavly William</span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap case-wrap" data-case><article class="case"><p class="case__back"><a href="index.html#work">All work</a></p>
+<header class="case__head"><div class="case__status"><span class="status status--live">Live</span></div>
+<h1 class="case__title">Parla Italiano marketing, creative and AI sales assistant</h1>
+<p class="case__context">Live language-course business I co-run. I own everything except the teaching.</p>
+<p class="case__summary">I run the marketing: the content strategy and calendar, the creative assets and videos, the social pages and the Meta ads. I also audited more than 100 sales chats and built an AI sales assistant for Messenger.</p>
+<p class="project__stack"><span class="project__stack-label">Built with: </span>
+Content strategy, Meta Ads, Creative production, Python, FastAPI, Messenger Platform, Gemini API, Groq API, pytest</p>
+<ul class="project__links"><li><a href="#case-video">Watch the video</a></li>
+<li><a href="https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a" rel="noopener">Notion write-up</a></li></ul></header>
+<section class="case__section" id="case-video"><h2 class="case__h2">Watch it</h2>
+<div class="case__video"><div class="video__frame"><a class="video__play" href="https://www.youtube.com/watch?v=8Q2z6JJwGhY" rel="noopener" aria-label="Play video: How I built an AI sales assistant for a Facebook page"><img src="https://i.ytimg.com/vi/8Q2z6JJwGhY/hqdefault.jpg" alt loading="lazy">
+<span>Play video</span></a></div>
+<p class="video__title">How I built an AI sales assistant for a Facebook page</p>
+<p class="video__more"><a href="https://www.youtube.com/watch?v=8Q2z6JJwGhY" rel="noopener">Watch on YouTube</a></p></div></section>
+<section class="case__section"><h2 class="case__h2">The problem</h2>
+<p class="case__lead">An Italian course business needed a full growth system around the teaching: a brand, content people want to watch, paid ads that bring the right students, and sales chats that actually close.</p></section>
+<section class="case__section"><h2 class="case__h2">Constraints</h2>
+<ul class="case__list"><li>Small ad budget.</li>
+<li>Sales happen in chat, mostly on WhatsApp and Messenger, where tracking is weak.</li>
+<li>Prices and promises must be exactly right in every reply.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">How it works</h2>
+<ol class="flow"><li class="flow__step">Content strategy and publishing calendar</li>
+<li class="flow__step">Creative assets and videos</li>
+<li class="flow__step">Rebranded Facebook page, new Instagram page</li>
+<li class="flow__step">Meta ads</li>
+<li class="flow__step">Sales chats</li>
+<li class="flow__step">Sales assistant: scripted answers first, Gemini 3.1 fallback (Groq as backup), human handoff</li>
+<li class="flow__step">A1 and A2 books</li></ol></section>
+<section class="case__section"><h2 class="case__h2">Decisions and why</h2>
+<div class="case__pairs"><div class="case__decision"><h3 class="case__h3">Own the whole funnel, not just the ads</h3>
+<p>Ads only work if the content, the page they land on and the reply in the chat all hold up, so I planned and produced all of it.</p></div>
+<div class="case__decision"><h3 class="case__h3">Audit the chats before automating them</h3>
+<p>Reading more than 100 sales chats showed slow first replies and prices that were never sent. A bot that answers badly faster would not fix that, so a reply playbook and a lead tracker came first.</p></div>
+<div class="case__decision"><h3 class="case__h3">Scripted answers first, AI second</h3>
+<p>Predictable questions are answered by scripted rules, with more than 330 automated tests checking them. Only questions they don't cover go to Gemini 3.1 (Groq if Gemini is unavailable), which keeps token use down and the common answers exactly right.</p></div>
+<div class="case__decision"><h3 class="case__h3">Price guardrails and a human handoff</h3>
+<p>The assistant must never invent a price or a promise. Anything outside what it is allowed to say goes to a person.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">What broke, and the fix</h2>
+<div class="case__pairs"><div class="case__pair"><p class="case__pair-a"><span class="case__pair-label">Problem: </span>
+Production hosting failed after Meta approved the app.</p>
+<p class="case__pair-b"><span class="case__pair-label">Fix: </span>
+Fixed. The assistant is hosted and answers customers on Messenger.</p></div></div></section>
+<section class="case__section"><h2 class="case__h2">Results</h2>
+<ul class="case__list"><li>Content strategy, creative assets, videos, rebranded social pages and Meta campaigns, all planned and produced by me.</li>
+<li>Redesigned A1 and A2 books, with a QR-linked audio companion.</li>
+<li>More than 100 sales chats audited. In a detailed sample of 31, the median first reply was 2 hours 20 minutes and 15 of 26 ad-driven chats never received a price.</li>
+<li>A 25-scenario reply playbook and a lead tracker (New, Qualified, Paid, Lost with reason).</li>
+<li>In the audited ad period, WhatsApp-button ads cost about 2.50 EGP per chat against 9.63 EGP on Messenger.</li>
+<li>The sales assistant now answers every chat immediately: first reply in seconds instead of hours, so leads aren't lost while they wait, and no extra person is hired to answer chats by hand.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Limits</h2>
+<ul class="case__list"><li>Campaign figures describe the audited period. They are diagnostic and claim no sales lift.</li>
+<li>Questions outside the tested scenarios and the AI fallback's limits still go to a person.</li></ul></section>
+<section class="case__section"><h2 class="case__h2">Next</h2>
+<ul class="case__list"><li>Measure price-sent rate and conversions against the audit baseline.</li></ul></section></article>
+<nav class="case__next" aria-label="Next case study"><p class="case__next-label">Next case study</p>
+<a href="case-orchestrator.html" class="case__next-link">AI model orchestrator</a></nav></main>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__inner">
+      <img class="contact__avatar" src="assets/img/avatar-laptop.webp" width="405" height="900" alt="" loading="lazy">
+      <div class="contact__body">
+        <div class="contact__brand" data-brand><img src="assets/img/bav-automations-logo.svg" alt="BAV Automations" width="130" height="137" loading="lazy">
+<p>Freelance builds run under my studio name, BAV Automations.</p></div>
+        <h2 class="contact__title" id="contact-title">Have a process that eats your team's week?</h2>
+        <p class="contact__text">Tell me what comes in, where it needs to end up, and what goes wrong today.</p>
+        <p><a class="contact__email" data-bind-mailto data-bind="email" href="mailto:bavlywilliamwork@gmail.com">bavlywilliamwork@gmail.com</a></p>
+        <p class="contact__whatsapp" data-whatsapp-wrap><a data-bind-whatsapp href="https://wa.me/201271136118">WhatsApp: +20 127 113 6118</a></p>
+        <ul class="contact__links" data-list="links"><li><a href="https://www.linkedin.com/in/bavly-william-b5a27822a" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/BavlyWilliam" rel="noopener">GitHub</a></li>
+<li><a href="https://www.youtube.com/@BavlyWilliamAI" rel="noopener">YouTube</a></li>
+<li><a href="https://www.behance.net/bavlywilliam" rel="noopener">Behance</a></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Updated <span data-bind="updated">November 2026</span>. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>

@@ -1,10 +1,16 @@
 /*
-  Draws both pages from window.PORTFOLIO (assets/js/data.js):
-    index.html  the portfolio
-    case.html   one case study, chosen by ?p=<project id>
+  Draws the pages from window.PORTFOLIO (assets/js/data.js):
+    index.html      the portfolio
+    case-<id>.html  one static page per case study, written by tools/prerender.js
+    case.html       one case study, chosen by ?p=<project id> (older links keep working)
   You should not need to edit this file to add projects, case studies,
   videos or creative work. Every piece of text is inserted with
   textContent, never innerHTML, so nothing in data.js can inject markup.
+
+  tools/prerender.js runs this same file in Node to write the HTML that
+  visitors without JavaScript, search engines and link previews see.
+  In the browser it clears that HTML and draws again from data.js, so the
+  page always matches data.js, even if the pre-render step was skipped.
 */
 (function () {
   "use strict";
@@ -48,6 +54,18 @@
   var videos = (data.videos || []).filter(function (v) { return v.youtubeId || v.file; });
   var videoById = {};
   videos.forEach(function (v) { videoById[v.id] = v; });
+
+  // Case studies that tools/prerender.js wrote as static pages, listed on <body>.
+  // Anything not listed (a new project before the next pre-render) uses case.html?p=<id>.
+  var staticCases = (document.body.getAttribute("data-static-cases") || "").split(/\s+/);
+  function caseHref(id) {
+    return staticCases.indexOf(id) !== -1 ? "case-" + id + ".html" : "case.html?p=" + encodeURIComponent(id);
+  }
+
+  // Remove the pre-rendered HTML before drawing it again from data.js.
+  document.querySelectorAll("[data-list], [data-brand], [data-case]").forEach(function (node) {
+    node.textContent = "";
+  });
 
   /* ---------- shared bindings (both pages) ---------- */
   var values = { availability: person.availability, email: person.email, updated: data.updated };
@@ -182,7 +200,7 @@
   function projectRow(p) {
     var l = p.links || {};
     var items = [];
-    if (p.caseStudy) items.push(el("li", null, [link("case.html?p=" + encodeURIComponent(p.id), "Read the case study")]));
+    if (p.caseStudy) items.push(el("li", null, [link(caseHref(p.id), "Read the case study")]));
     if (l.live) items.push(el("li", null, [link(l.live, "Open live site")]));
     if (l.code) items.push(el("li", null, [link(l.code, "Read the code")]));
     if (l.notion) items.push(el("li", null, [link(l.notion, "Notion write-up")]));
@@ -228,20 +246,22 @@
     }
     // Load YouTube only when the visitor asks for it: faster page, no tracking until then.
     // With a poster (your own thumbnail), nothing loads from YouTube before play.
+    // The poster is a link to the video, so it still works without JavaScript.
     var poster = v.poster || "https://i.ytimg.com/vi/" + encodeURIComponent(v.youtubeId) + "/hqdefault.jpg";
-    var button = el("button", { class: "video__play", type: "button", "aria-label": "Play video: " + v.title }, [
+    var play = el("a", { class: "video__play", href: youtubeUrl(v), rel: "noopener", "aria-label": "Play video: " + v.title }, [
       el("img", { src: poster, alt: "", loading: "lazy" }),
       el("span", { text: "Play video" })
     ]);
-    button.addEventListener("click", function () {
+    play.addEventListener("click", function (event) {
+      event.preventDefault();
       frame.replaceChild(el("iframe", {
         src: "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(v.youtubeId) + "?autoplay=1&rel=0&playsinline=1",
         title: v.title,
         allow: "autoplay; encrypted-media; picture-in-picture",
         allowfullscreen: ""
-      }), button);
+      }), play);
     });
-    frame.appendChild(button);
+    frame.appendChild(play);
     return frame;
   }
 
@@ -252,11 +272,11 @@
   }
 
   /* =====================================================================
-     Case study page: case.html?p=<id>
+     Case study page: case-<id>.html, or case.html?p=<id>
      ===================================================================== */
   function renderCase() {
     var root = $("[data-case]");
-    var id = new URLSearchParams(window.location.search).get("p");
+    var id = document.body.getAttribute("data-case-id") || new URLSearchParams(window.location.search).get("p");
     var withCases = projects.filter(function (p) { return p.caseStudy; });
     var p = withCases.filter(function (x) { return x.id === id; })[0];
 
@@ -339,7 +359,7 @@
     if (nextP && nextP !== p) {
       root.appendChild(el("nav", { class: "case__next", "aria-label": "Next case study" }, [
         el("p", { class: "case__next-label", text: "Next case study" }),
-        link("case.html?p=" + encodeURIComponent(nextP.id), nextP.title, "case__next-link")
+        link(caseHref(nextP.id), nextP.title, "case__next-link")
       ]));
     }
   }

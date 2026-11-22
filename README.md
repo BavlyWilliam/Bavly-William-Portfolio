@@ -42,7 +42,7 @@
 <table>
   <tr>
     <td valign="top" width="25%"><h3>Diagnose before building</h3><sub>Audited 100+ sales chats before automating any of them. The problem was slow replies and missing prices, not a missing bot.</sub></td>
-    <td valign="top" width="25%"><h3>Rules first, AI second</h3><sub>330+ chat scenarios answered without calling a model. Gemini only gets what the rules can't handle, which keeps cost and surprises down.</sub></td>
+    <td valign="top" width="25%"><h3>Rules first, AI second</h3><sub>Scripted rules answer the predictable chat questions without calling a model, checked by 330+ automated tests. Gemini only gets what the rules can't handle, which keeps cost and surprises down.</sub></td>
     <td valign="top" width="25%"><h3>Never trust the model</h3><sub>Every AI answer passes the same validator as a hand-typed message before anything is written, and AI rows are labelled for spot checks.</sub></td>
     <td valign="top" width="25%"><h3>Prove the outcome</h3><sub>A recurring report went from about 2 hours to under 10 minutes. Every number here is one I can explain, including how it was measured.</sub></td>
   </tr>
@@ -55,48 +55,48 @@ Built hands-on with AI coding agents (Claude Code). Every project has a case stu
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=whatsapp"><img src="assets/img/readme/card-whatsapp.webp" width="100%" alt="WhatsApp purchase logger: how a message becomes a row, from the WhatsApp group through the template parser, a Gemini fallback and the validator to Google Sheets"></a>
+      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-whatsapp.html"><img src="assets/img/readme/card-whatsapp.webp" width="100%" alt="WhatsApp purchase logger: how a message becomes a row, from the WhatsApp group through the template parser, a Gemini fallback and the validator to Google Sheets"></a>
       <h3>WhatsApp purchase logger</h3>
       <p><img src="https://img.shields.io/badge/Working%20build-101B35?style=flat-square" alt="Status: working build"> &nbsp;<sub>Freelance client, small business</sub></p>
-      <p>Reads a client's WhatsApp purchase group, logs every purchase to Google Sheets, then shows top spender against budget, top vendor and top-spending project. A rule-based parser reads the template. Gemini reads only what the rules can't, and its answer passes the same validator before anything is written.</p>
+      <p>Reads a client's WhatsApp purchase group and logs every purchase to Google Sheets, where an analysis tab shows top spender against budget, top vendor and top-spending project. A rule-based parser reads the template. Gemini reads only what the rules can't, and its answer passes the same validator before anything is written.</p>
       <p><sub><b>Stack</b> &nbsp;Python · Selenium · Google Sheets API · OAuth · Gemini API</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=whatsapp"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Whatsapp-accounting-automation">Code</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/shorts/1Zm951PmB_0">49-second video</a></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-whatsapp.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Whatsapp-accounting-automation">Code</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/shorts/1Zm951PmB_0">49-second video</a></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=parla-system"><img src="assets/img/readme/card-parla-system.webp" width="100%" alt="Parla Italiano case study: one request, a whole system"></a>
+      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html"><img src="assets/img/readme/card-parla-system.webp" width="100%" alt="Parla Italiano case study: one request, a whole system"></a>
       <h3>Parla Italiano: marketing, creative and AI sales assistant</h3>
       <p><img src="https://img.shields.io/badge/Live-2C6B52?style=flat-square" alt="Status: live"> &nbsp;<sub>Language-course business I co-run</sub></p>
-      <p>I own everything except the teaching: content, creative, Meta ads and sales. After auditing 100+ sales chats, I built a Messenger assistant that answers 330+ tested scenarios without a model and sends only the rest to Gemini, with price guardrails and a human handoff.</p>
-      <p><sub><b>Stack</b> &nbsp;Content strategy · Meta Ads · Creative production · Python · Gemini API</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=parla-system"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a">Notion write-up</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=yesqCWwKWEQ">Video</a></p>
+      <p>I own everything except the teaching: content, creative, Meta ads and sales. After auditing 100+ sales chats, I built a Messenger assistant whose scripted answers, checked by 330+ automated tests, handle the predictable questions without a model. Only the rest goes to Gemini (Groq as backup), with price guardrails and a human handoff.</p>
+      <p><sub><b>Stack</b> &nbsp;Content strategy · Meta Ads · Creative production · Python · FastAPI · Messenger Platform · Gemini API · Groq API · pytest</sub></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a">Notion write-up</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=8Q2z6JJwGhY">Sales assistant video</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=yesqCWwKWEQ">Case study video</a></p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=audio-companion"><img src="assets/img/readme/card-audio-companion.webp" width="100%" alt="Parla Italiano A1 and A2 book covers: scan the QR in the book, hear the unit on your phone"></a>
+      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-audio-companion.html"><img src="assets/img/readme/card-audio-companion.webp" width="100%" alt="Parla Italiano A1 and A2 book covers: scan the QR in the book, hear the unit on your phone"></a>
       <h3>Parla Italiano audio companion</h3>
       <p><img src="https://img.shields.io/badge/Live-2C6B52?style=flat-square" alt="Status: live"> &nbsp;<sub>For a printed Italian course book</sub></p>
       <p>Book owners scan a QR code printed in the book and get that unit's audio on their phone. No app, no account, no download. Printed links never change, so books already sold keep working.</p>
       <p><sub><b>Stack</b> &nbsp;HTML · JavaScript · GitHub Pages · Cloudflare R2 · Python</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=audio-companion"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://bavlywilliam.github.io/Audio-Books-website/">Live site</a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Audio-Books-website">Code</a></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-audio-companion.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://bavlywilliam.github.io/Audio-Books-website/">Live site</a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Audio-Books-website">Code</a></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=voice-kit"><img src="assets/img/readme/card-voice-kit.webp" width="100%" alt="Voice clone kit: a 1 to 2 minute recording in, any text in 23 languages out, running on your own PC"></a>
+      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-voice-kit.html"><img src="assets/img/readme/card-voice-kit.webp" width="100%" alt="Voice clone kit: a 1 to 2 minute recording in, any text in 23 languages out, running on your own PC"></a>
       <h3>Voice clone kit</h3>
       <p><img src="https://img.shields.io/badge/Working%20build-101B35?style=flat-square" alt="Status: working build"> &nbsp;<sub>Personal project, used to produce the course audio</sub></p>
       <p>Clones a voice from a 1 to 2 minute recording and reads any text in 23 languages, on your own PC with nothing uploaded. A consent step comes first, and every take gets an automatic quality check.</p>
       <p><sub><b>Stack</b> &nbsp;Python · Gradio · PyTorch · Chatterbox (open source)</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=voice-kit"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Voice-Clonning-project.">Code</a></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-voice-kit.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/voice-clone-kit">Code</a></p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=orchestrator"><img src="assets/img/readme/card-orchestrator.webp" width="100%" alt="Architecture diagram of the AI model orchestrator, from user request to model recommendation"></a>
+      <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-orchestrator.html"><img src="assets/img/readme/card-orchestrator.webp" width="100%" alt="Architecture diagram of the AI model orchestrator, from user request to model recommendation"></a>
       <h3>AI model orchestrator</h3>
       <p><img src="https://img.shields.io/badge/Prototype-702C42?style=flat-square" alt="Status: prototype"> &nbsp;<sub>Personal project</sub></p>
       <p>Asks a follow-up question when a request is missing something important, then recommends an AI model with its reasons, using live benchmark data. Gemini's answers are parsed into Pydantic models and rejected if they don't fit. Every run is logged to SQLite.</p>
       <p><sub><b>Stack</b> &nbsp;Python · Gemini API · Pydantic · SQLite · Artificial Analysis API</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case.html?p=orchestrator"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/AI-Orchestrator">Code</a></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-orchestrator.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/AI-Orchestrator">Code</a></p>
     </td>
     <td width="50%" valign="top">
       <a href="https://bavlywilliam.github.io/Bavly-William-Portfolio"><img src="assets/img/readme/card-live-site.webp" width="100%" alt="Everything else is on the live site"></a>
@@ -126,13 +126,22 @@ Tools I built for my own team at Concentrix on the Microsoft account, the final 
 
 <table>
   <tr>
-    <td valign="top"><a href="https://www.youtube.com/watch?v=yesqCWwKWEQ"><img src="assets/img/video-parla-case-study.webp" width="368" alt="Parla Italiano case study video"></a></td>
+    <td valign="top" width="50%"><a href="https://www.youtube.com/watch?v=yesqCWwKWEQ"><img src="assets/img/video-parla-case-study.webp" width="100%" alt="Parla Italiano case study video"></a></td>
+    <td valign="top" width="50%"><a href="https://www.youtube.com/watch?v=8Q2z6JJwGhY"><img src="https://i.ytimg.com/vi/8Q2z6JJwGhY/hqdefault.jpg" width="100%" alt="How I built an AI sales assistant for a Facebook page video"></a></td>
+  </tr>
+  <tr>
+    <td valign="top"><sub><b>Parla Italiano case study</b><br>One request, a whole system</sub></td>
+    <td valign="top"><sub><b>AI sales assistant</b><br>How I built it, and why it doesn't send every message to AI</sub></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
     <td valign="top"><a href="https://www.youtube.com/shorts/1Zm951PmB_0"><img src="assets/img/video-whatsapp-explainer.webp" width="116" alt="WhatsApp purchase logger explainer video"></a></td>
     <td valign="top"><a href="https://www.youtube.com/shorts/DMXJ6AwHf7s"><img src="assets/img/video-brand-video.webp" width="116" alt="Who I am and what I fix video"></a></td>
     <td valign="top"><a href="https://www.youtube.com/shorts/sgzUw8TQIVU"><img src="assets/img/video-parla-a2-ad.webp" width="116" alt="Parla Italiano A2 video ad"></a></td>
   </tr>
   <tr>
-    <td valign="top"><sub><b>Parla Italiano case study</b><br>One request, a whole system</sub></td>
     <td valign="top"><sub><b>WhatsApp logger</b><br>How it works, 49 s</sub></td>
     <td valign="top"><sub><b>Who I am</b><br>What I fix, 38 s</sub></td>
     <td valign="top"><sub><b>A2 video ad</b><br>Egyptian Arabic</sub></td>
@@ -155,16 +164,18 @@ Tools I built for my own team at Concentrix on the Microsoft account, the final 
 
 ![Static site](https://img.shields.io/badge/HTML-static-101B35?style=for-the-badge&logo=html5&logoColor=F4EBDD)
 ![No framework](https://img.shields.io/badge/JavaScript-no%20framework-101B35?style=for-the-badge&logo=javascript&logoColor=F4EBDD)
-![No build step](https://img.shields.io/badge/Build%20step-none-101B35?style=for-the-badge)
+![Pre-render: one command, no dependencies](https://img.shields.io/badge/Pre--render-one%20command%2C%20no%20dependencies-101B35?style=for-the-badge&logo=nodedotjs&logoColor=F4EBDD)
 ![Hosted on GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-101B35?style=for-the-badge&logo=githubpages&logoColor=F4EBDD)
 
-One page that collects my projects, code, videos, creative work and experience, so a hiring manager or client gets the whole picture from one link. Two HTML templates, one stylesheet, one script and one data file.
+One page that collects my projects, code, videos, creative work and experience, so a hiring manager or client gets the whole picture from one link. Two HTML templates, one stylesheet, one script, one data file and a pre-render script.
 
 ```mermaid
 flowchart LR
     A["assets/js/data.js<br/>all content"]:::data --> B["assets/js/render.js<br/>draws the page"]:::code
-    C["index.html + case.html<br/>page skeletons"]:::code --> B
-    B --> D(["Browser"]):::out
+    C["index.html + case.html<br/>page templates"]:::code --> B
+    B --> P["tools/prerender.js<br/>static HTML for no-JS<br/>visitors and link previews"]:::code
+    P --> D(["Browser"]):::out
+    B --> D
     E["assets/css/site.css<br/>design tokens + layout"]:::code --> D
     classDef data fill:#702C42,stroke:#101B35,stroke-width:2px,color:#F4EBDD
     classDef code fill:#F4EBDD,stroke:#101B35,stroke-width:2px,color:#101B35
@@ -175,8 +186,9 @@ flowchart LR
 
 - **Content and code are separate.** Adding a project means editing `data.js`, never HTML or JavaScript. Same idea as `clients.json` in the WhatsApp purchase logger.
 - **No markup injection.** `render.js` inserts every piece of text with `textContent`, never `innerHTML`, so nothing in `data.js` can inject markup into the page.
-- **Case studies come free.** Any project with a `caseStudy` block gets its own page at `case.html?p=<id>`, and each case study links to the next one.
-- **Fast by default.** YouTube loads from `youtube-nocookie.com` only when a visitor presses play. Fonts are self-hosted.
+- **Case studies come free.** Any project with a `caseStudy` block gets its own page at `case-<id>.html`, with its own title and link-preview text, and each case study links to the next one. Older `case.html?p=<id>` links keep working.
+- **Works without JavaScript.** `node tools/prerender.js` runs the real `render.js` in Node and writes the result into the HTML, so search engines, link previews and visitors without JavaScript see every project. In the browser, `render.js` draws the page again from `data.js`, so a forgotten pre-render never shows stale content to normal visitors.
+- **Fast by default.** YouTube loads from `youtube-nocookie.com` only when a visitor presses play, and each video's poster is a plain link to YouTube until then. Fonts are self-hosted.
 - **No analytics, no trackers.**
 
 ### Component map
@@ -185,8 +197,10 @@ flowchart LR
 |---|---|---|
 | `assets/js/data.js` | Every project, video, image, job and link, including the YouTube channel | **Yes, this is the only file you edit** |
 | `assets/js/render.js` | Reads `data.js` and builds the sections | No |
-| `index.html` | Home page skeleton, SEO and link-preview tags, the hero demo | Rarely |
-| `case.html` | One template for every case study, chosen by `?p=<project id>` | No |
+| `tools/prerender.js` | Writes the sections into the HTML and creates the `case-<id>.html` pages. Run `node tools/prerender.js` after editing `data.js` | Run it, don't edit it |
+| `index.html` | Home page template, SEO and link-preview tags, the hero demo. The sections between the tags are filled in by the pre-render | Rarely, outside the sections |
+| `case.html` | Template for every case study, and the page behind older `case.html?p=<project id>` links | No |
+| `case-<id>.html` | One static page per case study, generated | No, regenerate them |
 | `assets/css/site.css` | Colours, type, layout, the hero animation | Rarely |
 | `assets/img/` | Avatars, project images, `og.png` link-preview image, the BAV logo and robot icon | Add images here |
 | `assets/img/readme/` | The project cards and robot tile used only in this README | When a featured project changes |
@@ -288,11 +302,11 @@ Plain text, kept identical to the CV.
 1. Export one image (about 900px wide, `.webp`) into `assets/img/`.
 2. Open `assets/js/data.js`, copy an existing block inside `projects`, paste it where you want it in the list.
 3. Change every field. Empty strings hide links you don't have.
-4. Preview locally (below), then commit and push.
+4. Run `node tools/prerender.js` (Node 18 or newer), preview locally (below), then commit and push every file it changed.
 
 **Add a case study**
 
-Add a `caseStudy` block to the project in `data.js` (copy the WhatsApp one). A "Read the case study" link appears on its row and the page exists at `case.html?p=<id>`. The page footer links to the next case study automatically.
+Add a `caseStudy` block to the project in `data.js` (copy the WhatsApp one). Run `node tools/prerender.js`: it creates `case-<id>.html`, and a "Read the case study" link appears on the project's row. The page footer links to the next case study automatically. If you delete a case study, the script lists the `case-<id>.html` file to delete.
 
 **Add a video**
 
@@ -332,7 +346,7 @@ Open <http://localhost:8000>. Opening `index.html` by double-clicking also works
 This is a GitHub Pages **project site**, so its address is the account address plus the repository name.
 
 1. Repository: `BavlyWilliam/Bavly-William-Portfolio`, public.
-2. Push to `main`.
+2. Run `node tools/prerender.js`, then push to `main`.
 3. Settings, Pages: source "Deploy from a branch", branch `main`, folder `/ (root)`.
 4. The site goes live at <https://bavlywilliam.github.io/Bavly-William-Portfolio> within a few minutes.
 
