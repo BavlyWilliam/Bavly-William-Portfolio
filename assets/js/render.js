@@ -182,7 +182,7 @@
         el("p", { class: "timeline__when", text: job.when }),
         el("div", null, [
           el("h3", { class: "timeline__role", text: job.role }),
-          el("p", { class: "timeline__org", text: job.org }),
+          el("p", { class: "timeline__org", text: job.where ? job.org + " · " + job.where : job.org }),
           job.points && job.points.length
             ? el("ul", { class: "timeline__points" }, job.points.map(function (t) { return el("li", { text: t }); }))
             : null

@@ -66,7 +66,7 @@ window.PORTFOLIO = {
       id: "work",
       title: "At work",
       note:
-        "Tools I built for my own team at Concentrix on the Microsoft account, the final line of escalation support for Microsoft partners, while carrying the team's highest case volume at a 99.1% quality score. Described without internal data, screenshots or system names."
+        "Tools I built for my own team at Concentrix on the Microsoft account, where I resolve Microsoft partner requests and escalations. Described without internal data, screenshots or system names."
     },
     {
       id: "independent",
@@ -151,6 +151,18 @@ window.PORTFOLIO = {
       summary: "Cut a recurring report from about 2 hours to under 10 minutes.",
       how: "A JavaScript workaround that added data export and date filtering to a legacy internal system.",
       stack: ["JavaScript"]
+    },
+    {
+      id: "request-flows",
+      group: "work",
+      confidential: true,
+      title: "Request routing and follow-ups",
+      context: "Power Automate",
+      status: "live",
+      summary:
+        "Routes incoming requests, sends follow-up reminders and produces status reports, so none of it depends on someone remembering.",
+      how: "Power Automate flows.",
+      stack: ["Power Automate"]
     },
 
     /* ---------------- Independent projects ---------------- */
@@ -343,8 +355,7 @@ window.PORTFOLIO = {
       links: {
         code: "",
         live: "",
-        notion:
-          "https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a",
+        notion: "",
         video: "sales-assistant"
       },
       caseStudy: {
@@ -618,23 +629,30 @@ window.PORTFOLIO = {
     }
   ],
 
+  // Kept identical to the CV. `where` is optional and shows after the company name.
   experience: [
     {
-      when: "Jul 2025 – now",
+      when: "Jul 2025 – Present",
       role: "Relationship Manager, Microsoft account",
       org: "Concentrix Egypt",
+      where: "Remote",
       points: [
-        "Final line of escalation support for Microsoft partners. Built the tools listed under At work.",
-        "Now also own team reporting and training material.",
-        "Carried the team's highest case volume, about three times a typical Relationship Manager's, while holding a 99.1% quality score."
+        "Resolve Microsoft partner requests and escalations with internal teams.",
+        "Built an internal AI agent with Microsoft Copilot that answers partner-management questions from team knowledge, removing an estimated 20% of recurring manual work and reducing manual-entry errors.",
+        "Built a Power BI dashboard on a Power Query data model, giving team leadership a refreshable KPI view instead of manually consolidated reports.",
+        "Cut a recurring report from about 2 hours to under 10 minutes with a JavaScript workaround that added export and date filtering to a legacy system.",
+        "Automated request routing, follow-up reminders and status reporting with Power Automate flows.",
+        "Built a rule-based VBA automation that auto-assigns incoming cases across the team, kept deterministic instead of AI-driven so routine routing runs at zero LLM token cost."
       ]
     },
     {
       when: "Dec 2025 – Jul 2026",
-      role: "Account Manager, AI-enabled operations",
-      org: "Klover (contract)",
+      role: "Account Manager – AI-Enabled Operations",
+      org: "Klover",
+      where: "Remote, contract (concurrent with Concentrix role)",
       points: [
-        "Turned Arabic localisation of layered social-media templates for a UAE brand into a repeatable workflow using Claude."
+        "Coordinated delivery between creative, operations and client-facing teams for agency clients and documented repeatable processes.",
+        "Used AI tools to turn Arabic localisation of layered social-media templates for a UAE client brand into a repeatable workflow, cutting repetitive manual work for the design team."
       ]
     },
     {
@@ -642,21 +660,19 @@ window.PORTFOLIO = {
       role: "Team Leader",
       org: "Radisson Hotel Group",
       points: [
-        "Led and coached a team of 20.",
-        "Built a quality framework that stayed in use after handover, and rebuilt daily reporting in Power Query, saving about an hour a day."
+        "Led and coached a team of 20 on quality standards, customer handling and performance reporting.",
+        "Built a quality assurance framework from scratch (scorecards, evaluation criteria, coaching method, SOPs) that remained in use after handover.",
+        "Rebuilt daily reporting in Power Query, replacing about one hour of manual work per day with a one-click refresh, and made individual performance visible for recognition."
       ]
     },
     {
       when: "Mar 2022 – Mar 2025",
       role: "Pre-Sales Cloud Specialist, Microsoft account",
       org: "Concentrix Egypt",
-      points: ["Advised small and mid-size businesses on Azure and Microsoft 365."]
-    },
-    {
-      when: "Sep 2020 – Mar 2022",
-      role: "Sales Support and Seller Support",
-      org: "Concentrix Egypt, TripAdvisor and Amazon accounts",
-      points: []
+      points: [
+        "Advised SMB customers on Microsoft cloud and AI solutions (Azure, Microsoft 365), running discovery and translating technical capabilities into business outcomes for decision-makers.",
+        "Qualified opportunities and supported the sales pipeline across a multi-account portfolio."
+      ]
     }
   ],
 

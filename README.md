@@ -68,7 +68,7 @@ Built hands-on with AI coding agents (Claude Code). Every project has a case stu
       <p><img src="https://img.shields.io/badge/Live-2C6B52?style=flat-square" alt="Status: live"> &nbsp;<sub>Language-course business I co-run</sub></p>
       <p>I own everything except the teaching: content, creative, Meta ads and sales. After auditing 100+ sales chats, I built a Messenger assistant whose scripted answers, checked by 330+ automated tests, handle the predictable questions without a model. Only the rest goes to Gemini (Groq as backup), with price guardrails and a human handoff.</p>
       <p><sub><b>Stack</b> &nbsp;Content strategy · Meta Ads · Creative production · Python · FastAPI · Messenger Platform · Gemini API · Groq API · pytest</sub></p>
-      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://app.notion.com/p/Parla-Italiano-Building-an-end-to-end-learning-and-sales-experience-404b29d974f781cdaeb2f79785ba122a">Notion write-up</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=8Q2z6JJwGhY">Sales assistant video</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=yesqCWwKWEQ">Case study video</a></p>
+      <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-parla-system.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=8Q2z6JJwGhY">Sales assistant video</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/watch?v=yesqCWwKWEQ">Case study video</a></p>
     </td>
   </tr>
   <tr>
@@ -77,7 +77,7 @@ Built hands-on with AI coding agents (Claude Code). Every project has a case stu
       <h3>Parla Italiano audio companion</h3>
       <p><img src="https://img.shields.io/badge/Live-2C6B52?style=flat-square" alt="Status: live"> &nbsp;<sub>For a printed Italian course book</sub></p>
       <p>Book owners scan a QR code printed in the book and get that unit's audio on their phone. No app, no account, no download. Printed links never change, so books already sold keep working.</p>
-      <p><sub><b>Stack</b> &nbsp;HTML · JavaScript · GitHub Pages · Cloudflare R2 · Python</sub></p>
+      <p><sub><b>Stack</b> &nbsp;HTML · JavaScript · GitHub Pages · Cloudflare R2, Workers and D1 · Python</sub></p>
       <p><a href="https://bavlywilliam.github.io/Bavly-William-Portfolio/case-audio-companion.html"><b>Case study</b></a> &nbsp;·&nbsp; <a href="https://bavlywilliam.github.io/Audio-Books-website/">Live site</a> &nbsp;·&nbsp; <a href="https://github.com/BavlyWilliam/Audio-Books-website">Code</a></p>
     </td>
     <td width="50%" valign="top">
@@ -109,9 +109,9 @@ Built hands-on with AI coding agents (Claude Code). Every project has a case stu
 
 ## At work
 
-<img src="https://img.shields.io/badge/All%20six-Live-2C6B52?style=flat-square" alt="All six are live">
+<img src="https://img.shields.io/badge/All%20seven-Live-2C6B52?style=flat-square" alt="All seven are live">
 
-Tools I built for my own team at Concentrix on the Microsoft account, the final line of escalation support for Microsoft partners. Described without internal data, screenshots or system names.
+Tools I built for my own team at Concentrix on the Microsoft account, where I resolve Microsoft partner requests and escalations. Described without internal data, screenshots or system names.
 
 | Tool | What it does | Built with |
 |---|---|---|
@@ -121,6 +121,7 @@ Tools I built for my own team at Concentrix on the Microsoft account, the final 
 | **Standard call-intake form** | Fixed fields turn every call into the same note structure, so details aren't skipped. | HTML, JavaScript |
 | **Team reporting data model** | A refreshable KPI view for team leadership, replacing reports consolidated by hand. | Power Query, Power BI |
 | **Legacy report export** | Added data export and date filtering to a legacy internal system. A recurring report went from about 2 hours to under 10 minutes. | JavaScript |
+| **Request routing and follow-ups** | Routes incoming requests, sends follow-up reminders and produces status reports, so none of it depends on someone remembering. | Power Automate |
 
 ## Videos
 
