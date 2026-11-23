@@ -579,7 +579,7 @@ window.PORTFOLIO = {
   ],
 
   /*
-    Creative work: one set per Behance project, newest first.
+    Creative work: one set per Behance project, in the order shown on the site.
     Every image in a set links to `link`, the set's Behance project page.
     Export images 720px wide as .webp into assets/img/creative/ and put
     their pixel width and height in `size`, so the grid keeps their shape.
@@ -588,20 +588,6 @@ window.PORTFOLIO = {
     screen readers (leave it "" when the caption already says it).
   */
   creative: [
-    {
-      id: "souk-el-grana",
-      title: "Souk el Grana: launch posts for a handmade bag brand",
-      note: "A brand guide and 10 launch posts for a handmade bag brand in Egypt, each in feed and story sizes, with captions and Meta ad copy in English and Egyptian Arabic. Five of the ten posts are below. Product photos by the brand; made with the help of Claude.",
-      link: "https://www.behance.net/gallery/258875611/Souk-el-Grana-Social-Media-Posts-Meta-Ads",
-      size: [720, 900],
-      items: [
-        { image: "assets/img/creative/souk-01-blue-fringe-bag.webp", alt: "Souk el Grana post: a blue and cream crochet bag with long fringe. Headline: Fringe benefits." },
-        { image: "assets/img/creative/souk-02-all-in-one-bag.webp", alt: "Souk el Grana post: the All in One crochet bag with stripes, colour blocks and a heart mirror charm. Headline: Colour, charm, all in one." },
-        { image: "assets/img/creative/souk-03-all-in-one-custom-name.webp", alt: "Souk el Grana post: close-up of the All in One bag's charm with beaded initials. Headline: Signed, your name." },
-        { image: "assets/img/creative/souk-04-beaded-bag-colourful.webp", alt: "Souk el Grana post: a beaded bag in amber, red and blue squares, open for preorder. Headline: Six squares of sunshine." },
-        { image: "assets/img/creative/souk-05-beaded-strap.webp", alt: "Souk el Grana post: the beaded bag next to its matching beaded strap. Headline: Strap on, or off?" }
-      ]
-    },
     {
       id: "parla-italiano",
       title: "Parla Italiano: book cover and ad",
@@ -614,6 +600,20 @@ window.PORTFOLIO = {
           image: "assets/img/creative/parla-level-test-ad.webp", size: [720, 900], caption: "Level-test ad",
           alt: "Parla Italiano ad: a large \"A?\" over the question \"Your Italian level, A1 or A2?\", offering a free 20-minute online level test on Messenger."
         }
+      ]
+    },
+    {
+      id: "souk-el-grana",
+      title: "Souk el Grana: launch posts for a handmade bag brand",
+      note: "A brand guide and 10 launch posts for a handmade bag brand in Egypt, each in feed and story sizes, with captions and Meta ad copy in English and Egyptian Arabic. Five of the ten posts are below. Product photos by the brand; made with the help of Claude.",
+      link: "https://www.behance.net/gallery/258875611/Souk-el-Grana-Social-Media-Posts-Meta-Ads",
+      size: [720, 900],
+      items: [
+        { image: "assets/img/creative/souk-01-blue-fringe-bag.webp", alt: "Souk el Grana post: a blue and cream crochet bag with long fringe. Headline: Fringe benefits." },
+        { image: "assets/img/creative/souk-02-all-in-one-bag.webp", alt: "Souk el Grana post: the All in One crochet bag with stripes, colour blocks and a heart mirror charm. Headline: Colour, charm, all in one." },
+        { image: "assets/img/creative/souk-03-all-in-one-custom-name.webp", alt: "Souk el Grana post: close-up of the All in One bag's charm with beaded initials. Headline: Signed, your name." },
+        { image: "assets/img/creative/souk-04-beaded-bag-colourful.webp", alt: "Souk el Grana post: a beaded bag in amber, red and blue squares, open for preorder. Headline: Six squares of sunshine." },
+        { image: "assets/img/creative/souk-05-beaded-strap.webp", alt: "Souk el Grana post: the beaded bag next to its matching beaded strap. Headline: Strap on, or off?" }
       ]
     }
   ],

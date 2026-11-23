@@ -280,7 +280,7 @@ A video with neither `youtubeId` nor `file` is hidden. The whole Videos section 
 
 #### `creative[]`
 
-One set per Behance project, newest first.
+One set per Behance project, in the order shown on the site.
 
 | Field | Notes |
 |---|---|
@@ -326,7 +326,7 @@ The player loads YouTube only when the visitor presses play, which keeps the pag
 
 **Add creative work**
 
-Publish the project on Behance first. Export each image 720px wide as `.webp` into `assets/img/creative/`, then copy the Souk el Grana set in `creative`, put it first, and change the text, `link` (the Behance project URL), `size` and `items`. Run `node tools/prerender.js`.
+Publish the project on Behance first. Export each image 720px wide as `.webp` into `assets/img/creative/`, then copy the Souk el Grana set in `creative`, put it where you want it in the list, and change the text, `link` (the Behance project URL), `size` and `items`. Run `node tools/prerender.js`.
 
 **Add a project to this README**
 
