@@ -280,11 +280,18 @@ A video with neither `youtubeId` nor `file` is hidden. The whole Videos section 
 
 #### `creative[]`
 
+One set per Behance project, newest first.
+
 | Field | Notes |
 |---|---|
-| `title` | Caption |
-| `image` | Path in `assets/img/` |
-| `link` | The Behance project page |
+| `id` | Short id, used for the set's heading anchor |
+| `title` | Set heading, e.g. "Souk el Grana: launch posts for a handmade bag brand" |
+| `note` | One or two sentences under the heading: what it is and your part |
+| `link` | The Behance project page. Every image in the set links here, plus a "See the project on Behance" link |
+| `size` | `[width, height]` of the images in pixels, so the grid keeps their shape |
+| `items[]` | `{ image, alt, caption, size }`: `image` is a path in `assets/img/creative/`, `alt` describes the image for screen readers, `caption` is optional text under it, `size` only for an image shaped differently from the rest of its set |
+
+A set with no `items` is hidden.
 
 #### `experience[]`, `skills`, `credentials`
 
@@ -319,7 +326,7 @@ The player loads YouTube only when the visitor presses play, which keeps the pag
 
 **Add creative work**
 
-Export each piece at about 900px wide as `.webp` into `assets/img/`, then add a block to `creative` with the Behance project URL as `link`.
+Publish the project on Behance first. Export each image 720px wide as `.webp` into `assets/img/creative/`, then copy the Souk el Grana set in `creative`, put it first, and change the text, `link` (the Behance project URL), `size` and `items`. Run `node tools/prerender.js`.
 
 **Add a project to this README**
 

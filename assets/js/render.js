@@ -150,16 +150,29 @@
       projectList.appendChild(groupNode);
     });
 
-    /* Creative */
+    /* Creative: one set per project, each image linking to the set's Behance page */
     var creativeList = list("creative");
-    var creative = data.creative || [];
+    var creative = (data.creative || []).filter(function (set) { return set.items && set.items.length; });
     if (!creative.length) $("#creative").hidden = true;
-    creative.forEach(function (c) {
-      var figure = el("figure", { class: "creative__item" }, [
-        el("img", { src: c.image, alt: "", loading: "lazy", width: "720", height: "1018" }),
-        el("figcaption", { class: "creative__title", text: c.title })
-      ]);
-      creativeList.appendChild(c.link ? el("a", { class: "creative__link", href: c.link, rel: isExternal(c.link) ? "noopener" : null }, [figure]) : figure);
+    creative.forEach(function (set) {
+      var grid = el("div", { class: "creative__grid" });
+      set.items.forEach(function (item) {
+        var size = item.size || set.size || [720, 1018];
+        var figure = el("figure", { class: "creative__item" }, [
+          el("img", {
+            src: item.image, alt: item.alt || "", loading: "lazy",
+            width: String(size[0]), height: String(size[1])
+          }),
+          item.caption ? el("figcaption", { class: "creative__title", text: item.caption }) : null
+        ]);
+        grid.appendChild(set.link ? el("a", { class: "creative__link", href: set.link, rel: isExternal(set.link) ? "noopener" : null }, [figure]) : figure);
+      });
+      creativeList.appendChild(el("section", { class: "creative-set", "aria-labelledby": "creative-" + set.id }, [
+        el("h3", { class: "creative-set__title", id: "creative-" + set.id, text: set.title }),
+        set.note ? el("p", { class: "creative-set__note", text: set.note }) : null,
+        grid,
+        set.link ? el("p", { class: "creative-set__more" }, [link(set.link, set.linkText || "See the project on Behance")]) : null
+      ]));
     });
 
     /* Experience */
