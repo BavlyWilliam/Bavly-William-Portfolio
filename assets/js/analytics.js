@@ -19,7 +19,7 @@
 (function () {
   "use strict";
 
-  var UMAMI_WEBSITE_ID = ""; // <- paste your Umami website ID here
+  var UMAMI_WEBSITE_ID = "d2ed0ad2-2b36-4057-b852-9285984807d5"; // Umami > Settings > Websites > Edit
   var UMAMI_SCRIPT = "https://cloud.umami.is/script.js";
 
   if (!UMAMI_WEBSITE_ID) return;
