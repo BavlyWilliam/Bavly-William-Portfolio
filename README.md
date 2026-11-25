@@ -362,6 +362,40 @@ All links inside the site are relative, so it works under any repository name. O
 
 </details>
 
+<details>
+<summary><b>Visitor analytics and tracked application links</b></summary>
+
+<br>
+
+The site uses [Umami Cloud](https://cloud.umami.is) (free Hobby plan): no cookies, no personal data, so no cookie banner is needed. All the code is in `assets/js/analytics.js`, and it does nothing until a website ID is pasted in.
+
+**One-time setup**
+
+1. Sign up at <https://cloud.umami.is>, then Settings, Websites, Add website. Domain: `bavlywilliam.github.io`.
+2. Open the new website's Edit page and copy its **Website ID**.
+3. Paste it into `UMAMI_WEBSITE_ID` at the top of `assets/js/analytics.js` and push to `main`.
+4. In each browser you use, open the site once with `?notrack` at the end of the address, so your own visits are not counted.
+
+**One tracked link per application**
+
+Add `?ref=` and a short name for the company to the address you send:
+
+```
+https://bavlywilliam.github.io/Bavly-William-Portfolio/?ref=acme-dubai
+https://bavlywilliam.github.io/Bavly-William-Portfolio/case-whatsapp.html?ref=acme-dubai
+```
+
+Use lowercase letters, numbers and dashes. Keep a fixed label for each channel too, such as `?ref=linkedin` on your profile and `?ref=youtube` in video descriptions.
+
+**Reading it in Umami**
+
+- **Sessions**: every visit with its time, country, device and the pages opened. Visits from a tracked link carry `company: acme-dubai`.
+- **Events**: `application-link` (someone opened a tracked link), `cv-download`, `contact-email`, `contact-whatsapp`, `click-linkedin`, `click-github`, `click-youtube`, `click-behance` and `outbound-link`. Each carries `company` when the visit came from a tracked link.
+
+Analytics never shows *who* a visitor is, only that a visit came through a given link. A link forwarded inside a company counts under the same name, and an applicant tracking system or link-preview bot can open it once without a person reading it, so treat a single short visit with care.
+
+</details>
+
 ## Brand
 
 BAV Automations palette. The tokens live at the top of `assets/css/site.css`; change a colour there and it changes everywhere.
